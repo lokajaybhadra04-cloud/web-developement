@@ -33,6 +33,15 @@ app.get("/", (req, res) => {
 });
 
 
+
+
+
+
+
+
+
+
+
 // =========================
 // INDEX ROUTE (Show all listings)
 // =========================
@@ -86,6 +95,25 @@ app.get("/listing", async (req, res) => {
 // =========================
 // UPDATE ROUTE
 // =========================
+app.get("/listing/:id/edit", async (req, res) => {
+
+  const { id } = req.params;
+  try {
+
+    const listing = await Listing.findById(id);
+    if (!listing) {
+      return res.status(404).send("Listing not found");
+    }
+    res.render("listings/edit", { listing });
+  } catch (err) {
+    console.log("Error fetching listing for edit:", err);
+    res.status(500).send("Error fetching listing for edit");
+  }
+});
+
+
+
+
 app.post("/listing/:id/edit", async (req, res) => {
 
   const { id } = req.params;
@@ -139,6 +167,47 @@ app.post("/listing/:id/delete", async (req, res) => {
   }
 
 });
+
+
+
+//create new route listing:
+app.get("/listing/new", (req, res) => {
+  res.render("listings/new");
+});
+
+app.post("/listing/new", async (req, res) => {
+  try {
+    const newListing = new Listing(req.body);
+    await newListing.save();
+    res.redirect("/listing");
+  } catch (err) {
+    console.log("Error creating listing:", err);
+    res.status(500).send("Error creating listing");
+  }
+});
+
+
+
+
+
+
+//show indivual listing when click
+//route show route
+app.get("/listing/:id", async (req, res) => {
+ const { id } = req.params;  
+  try { 
+    const listing = await Listing.findById(id);
+    if (!listing) {
+      return res.status(404).send("Listing not found");
+    }
+    res.render("listings/show", { listing });
+  } catch (err) {
+    console.log("Error fetching listing:", err);
+    res.status(500).send("Error fetching listing");
+  }
+});
+
+
 
 
 // Server
