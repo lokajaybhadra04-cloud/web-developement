@@ -2,16 +2,32 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
+
+//why path is require  because we need to specify the path for views and public folder
 const path = require("path");
+
+
+//why ejs-mate is require because we need to use the layout and partials in our views
 const ejsMate = require("ejs-mate");
 
 // View Engine
+//why view engine is set to ejs because we are using ejs as our templating engine and we need to specify it to express
 app.set("view engine", "ejs");
+//why views is set to path.join(__dirname, "views") because we need to specify the path
+//  for our views folder and __dirname is the current directory of the file
+//  and path.join is used to join the current directory with the views folder
 app.set("views", path.join(__dirname, "views"));
+//why app.engine is set to ejs-mate because we need to use the layout and partials in our views and ejs-mate is a layout engine for ejs
 app.engine("ejs", ejsMate);
 
-// Middleware
-app.use(express.urlencoded({ extended: true }));
+//  request==> Middleware===>response
+
+
+//why express.urlencoded is used because we need to "parse" the form data 
+// and we need to specify extended: true to parse nested objects
+ app.use(express.urlencoded({ extended: true }));
+ //why express.static is used because we need to serve static files
+ //  like css and js and we need to specify the path for our public folder
 app.use(express.static(path.join(__dirname, "public")));
 
 // MongoDB Connection
@@ -108,8 +124,7 @@ app.get("/listing/:id/edit", async (req, res) => {
   } catch (err) {
     console.log("Error fetching listing for edit:", err);
     res.status(500).send("Error fetching listing for edit");
-  }
-});
+  }});
 
 
 
