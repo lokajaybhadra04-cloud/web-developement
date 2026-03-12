@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+/* these two need for every css to get can start */
+
+
+font-family: "Poppins", sans-serif;
+font-weight: 100;
+
+
+}
+
+
+
+a{
+    color:yellow;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+
+.main_box{
+
+background-image: url("photo.jpg");
+height: 100vh;
+background-size: cover;
+
+
+}
+
+/* set image to complete page height:100vh */
+
+
+/*
+
+background-size:cover
+cover  iamge completey to background */
+
+
+.btn_one i
+{
+color:rgb(247, 247, 247);
+font-size: 30px;
+font-weight:700 ;
+position:relative;
+left: 16px;
+line-height: 30px;
+transition: all 0.3s linear ;
+
+}
+
+
+
+.sidebar_menu
+{
+
+position: fixed;
+left: -400px;
+
+height: 100vh;
+width:315px;
+background-color: rgba(255, 255,255, 0.3);
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+ 
+transition: all 0.3s linear ;
+
+
+}
+
+
+.sidebar_menu .logo{
+
+    position: absolute;
+    width: 100%;
+    line-height:20px;
+    box-shadow:0px 5px 5px 0px rgba(255, 254, 254, 0.2) ;
+    height: 30px;
+
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 2px;
+
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+  
+
+}
+
+
+
+.sidebar_menu  .btn_two 
+{
+
+
+    color: rgba(215, 230, 230, 0.281);
+    font-size: 20px;
+    font-weight:700 ;
+    position:absolute;
+    left: 298px;
+    line-height: 20px;
+    opacity: 0;
+     
+transition: all 0.2s linear ;
+
+
+ 
+}
+
+
+
+
+.sidebar_menu  .btn_two i
+{
+
+
+    cursor:pointer;
+
+}
+
+/* add curser to button two 
+
+ cursor:pointer for "icon" tag for cross */
+
+
+ /* smlirly button 1 */
+ .btn_one i
+{
+
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+.sidebar_menu .menu
+{
+  color:white;
+  position:absolute;
+  width:100%;
+  top: 60px;
+}
+
+
+
+.sidebar_menu .menu li
+{
+
+margin-top:3px;
+padding: 12px 20px ;
+
+
+
+}
+
+.sidebar_menu .menu i,a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.sidebar_menu .menu i{
+
+    padding-right: 5px;
+}
+
+
+.sidebar_menu .social_media
+{
+color:white;
+opacity: 0.4;
+position: absolute;
+left:25%;
+bottom: 50px;
+    
+}
+
+.sidebar_menu .social_media i{
+    color:white;
+    opacity: 0.4;
+    padding: 0 5px;
+
+}
+
+#check
+{
+
+display: none;
+
+
+}
+
+
+.sidebar_menu .menu li:hover{
+    box-shadow:3px 0 0 3px rgba(255, 254, 254, 0.527) ;
+}
+
+
+.btn_one:hover{
+    font-size:35px;
+}
+.btn_two:hover{
+    font-size: 23px;
+}
+
+
+.sidebar_menu  .social_media i:hover
+{
+    opacity:1 ;
+    transform: scale(1.1);
+   
+}
+
+.sidebar_menu:hover
+{
+    box-shadow:0px 0px 0px 5px rgba(255, 254, 254, 0.5) ;
+
+}
+
+
+/* 
+
+Select and style all <ul> elements that are preceded by a <p> element with the same parent:
+
+p ~ ul {
+  background-color: gold;
+  border: 1px solid gray;
+
+} 
+  
+
+
+*/
+
+
+
+
+#check:checked ~ .sidebar_menu
+{
+ left:0;
+ 
+}
+
+
+#check:checked ~ .btn_one i
+{
+
+  opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two ,i
+{
+    opacity: 1;
+}

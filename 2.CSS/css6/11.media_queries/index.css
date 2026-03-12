@@ -1,0 +1,276 @@
+/* Media Queries 
+
+help create a "responsive" website
+
+
+website view according the device it is runing
+
+
+
+
+
+Example media queries:
+
+width (of viewport(browser view visible to us))
+
+
+@media(width:400px)
+{
+
+ div{
+
+background-color:red;
+
+
+ }
+
+
+
+h1
+｛
+  font-size:30px;
+｝
+
+
+}
+
+
+
+--->here ABOVE:when width is 400px
+             any "div"  background-color:red
+
+
+
+
+
+
+---->
+Another   Example media queries with min and max width("we mostly use"):
+
+
+
+
+@media(min-width:400px)
+{
+
+ div{
+
+background-color:red;
+
+
+ }
+
+
+
+h1
+｛
+  font-size:30px;
+｝
+
+
+}
+
+
+
+@media(max-width:400px)
+{
+
+ div{
+
+background-color:red;
+
+
+ }
+
+
+
+h1
+｛
+  font-size:30px;
+｝
+
+
+}
+
+
+
+
+
+
+
+
+  --->
+  we combine both create multi property mixed
+
+
+@mediac
+
+{
+
+ div{
+
+  background-color:red;
+
+     }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEVICE/enviroment :has property
+
+ 1. device-width
+ 2. device-height
+ 3. orientation->landscape,portrait (mode of device)
+ (most used are above three)
+ 4. hover
+ 5. forced_colors
+ 6. display-mode
+
+ etc.....
+
+
+
+
+*/
+
+
+
+
+
+
+h1
+{
+
+background-color: yellow;
+border:2px solid black;
+
+}
+
+div
+{
+  width: 100px;
+  height: 100px;
+  background-color:rgb(16, 39, 243);
+  color: rgb(43, 226, 67);
+ 
+ }
+
+
+
+
+
+
+
+
+
+/* 
+
+
+@media (width: 400px)
+{
+
+h1{
+background-color: red;
+color: white;
+
+ }
+
+ div
+ {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+ }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media(min-width:600px)
+{
+  h1{
+    background-color: yellowgreen;
+    color: blueviolet;
+    
+     }
+    
+     div
+     {
+      width: 100px;
+      height: 100px;
+      background-color:black;
+     }
+
+}
+
+*/
+
+
+
+@media(max-width:599px)
+{
+  h1{
+    background-color: rgb(205, 50, 58);
+    color: blueviolet;
+    
+     }
+    
+     div
+     {
+      width: 100px;
+      height: 100px;
+      background-color:rgb(16, 243, 47);
+     }
+
+} 
+     
+
+   /*
+
+     @media(min-width:400px) and (max-width:800px)
+
+     {
+
+      h1{
+        background-color: rgb(205, 50, 58);
+        color: blueviolet;
+        
+         }
+     
+      div
+       {
+         width: 100px;
+         height: 100px;
+         background-color:rgb(16, 243, 47);
+         color: magenta;
+        
+        }
+
+    }  */
+

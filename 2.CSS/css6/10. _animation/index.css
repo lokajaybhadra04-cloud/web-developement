@@ -1,0 +1,172 @@
+/* from is  0%
+  
+   to is 100%
+
+
+   but also:
+
+   % animmation
+ 
+
+
+
+
+
+
+@keyframes NEW_animation
+{
+
+0%
+{ 
+   margin:  0px;
+   width: 100px;
+   height: 300px;
+   font-size:20px; 
+   background-color:crimson;
+   
+   }
+
+
+   50%
+   {
+
+
+
+    margin:  150px;
+   text-align: center;
+    width: 400px;
+    height: 400px;
+   font-size:40px;
+    background-color: yellow;
+    border-radius:50%;
+
+   }
+
+
+
+
+   100％
+   ｛
+     
+
+   margin:  450px;
+   text-align: center;
+    width: 700px;
+   height: 700px;
+   font-size:80px;
+    background-color: blue;
+    border-radius:50%;
+
+   ｝
+
+}
+
+
+ */
+
+
+
+
+
+
+
+/* 
+@keyframes NEW_animation
+{
+
+from  
+{ margin:  0px;
+   width: 100px;
+   height: 300px;
+   font-size:20px; 
+   background-color:crimson;
+
+}
+
+to  
+ {  margin:  150px;
+   text-align: center;
+    width: 400px;
+   height: 400px;
+   font-size:40px;
+    background-color: yellow;
+    border-radius:50%;
+
+
+}
+} */
+
+/* now animation work many states 0%, 50%,100% */
+
+
+@keyframes NEW_animation
+{
+
+0%
+{ 
+   margin:  0px;
+   width: 100px;
+   height: 300px;
+   font-size:20px; 
+   background-color:crimson;
+   
+   }
+
+
+   50%
+   {
+
+
+
+    margin:  150px;
+   text-align: center;
+    width: 400px;
+    height: 400px;
+   font-size:40px;
+    background-color: yellow;
+    border-radius:50%;
+
+   }
+
+
+
+
+   100%
+   {
+
+   margin:  450px;
+   text-align: center;
+    width: 700px;
+   height: 700px;
+   font-size:80px;
+    background-color: blue;
+    border-radius:50%;
+
+   }
+
+}
+
+
+
+
+
+
+
+
+
+ .box
+ {
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+    text-align: center;
+    color: yellowgreen;
+
+
+   
+
+
+
+animation: NEW_animation 2s ease-in 0.2s infinite alternate-reverse; 
+
+ }

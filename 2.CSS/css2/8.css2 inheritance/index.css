@@ -1,0 +1,27 @@
+div
+{
+    background-color: aquamarine;
+}
+form
+{
+    background-color: rgb(14, 226, 226);
+}
+
+/*""input" & "button" wil never inherit property of parent element*/
+
+
+/* "input" & "button" inherit the parent element property then*/
+
+button
+{
+
+    background-color: inherit;
+}
+
+input
+{
+
+    background-color: inherit;
+}
+
+

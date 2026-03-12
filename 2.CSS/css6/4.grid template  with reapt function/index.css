@@ -1,0 +1,83 @@
+
+/* repeat is used to divide all available space equally 
+
+
+
+grid-template-rows:repeat(count,1fr)
+
+means:
+1fr->1 fraction of 100% width(avialble space)
+repeat-> nos of fraction  we need to repeat
+
+
+
+
+grid-template-columns:repeat(count,1fr)
+
+means:
+1fr->1 fraction of 100% height(avialble space)
+repeat-> nos of fraction  we need to repeat
+
+
+
+
+
+
+
+
+1.grid-template-rows:repeat(2,1fr)
+
+
+
+
+2.grid-template-rows:1fr 1fr
+  
+
+  1 and 2 are same  means :1fraction given 2 times.
+
+
+
+*/
+
+
+
+
+/* grid used when we need cols and rows as well(example:- table) */
+
+
+
+
+
+
+
+
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color:yellow ;
+    display:grid;
+    /* grid-template-rows:50px 50px 50px 50px 50px ;
+    grid-template-columns:auto auto ;         
+    
+    */
+
+    grid-template-rows:repeat(5,1fr);    
+    
+    grid-template-columns:repeat(3,1fr);                                                                                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                              
+                                                                     
+}
+
+.item
+{
+    /*
+ width: 100px;
+height:50px; */
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+}

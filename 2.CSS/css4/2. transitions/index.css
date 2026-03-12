@@ -1,0 +1,82 @@
+/*css transtition enable to define transtion between two states of a elemnt 
+
+example:-when we click a button ,when we hover above "div " the
+,the element  shape of "div(html tag)"transtion form  box to circle or background,
+shape ortext or other property changes
+
+shape of "div" transition :
+box ------> circle is called transition state 
+state1        state2 
+or transtiton hapen litle delay we need "css transition"*/
+
+
+
+
+div{
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin: 0 auto;
+    /* (margin : 0 auto ) make div center of the page */
+    /* for smooth transition  we apply trasition margin-top so
+    margin-top will be in transition */
+    transition: margin-top 2s ease-in-out 0.1s ;
+
+
+
+
+
+
+
+
+    /* transition: 1s; */
+    /* transition: 1s 1s; */
+
+    /* transition property :
+     transition:2 sec;(it is duration)
+
+
+      trannstion shorthand:
+
+      transition:property name we apply transition|duration|timimg-function|delay\
+      
+     1.property name we want to change like:
+       background color:blue;
+
+     2.transition-duration:2sec     same effect 
+
+
+     3.transition-timing-function:(tell flow of state change will happen)
+     value can be :
+    linear (linear change of state)
+    ease   (change of state with ease)
+    steps  (change of state in steps)
+    cubic  (change of state in cubic in forward and backward manner)
+
+     4.transition-delay:1sec
+
+     OR
+     transition:2s(duration) ease(timing-function) 1s(delay)
+
+     transition:1s (duration) 1s(delay)
+     
+     
+     */
+}
+
+/* above intial state  of div */ 
+
+
+
+
+
+
+
+div:hover
+{
+    background-color: blue;
+    /* border-radius: 50% */
+    margin-top: 300px;
+}
+/* above final state  of div */ 

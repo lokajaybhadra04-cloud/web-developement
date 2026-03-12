@@ -1,0 +1,39 @@
+/* body h2 is exAMPLE DESCEDENT SELECTOR*/
+/*body > .division > p  and  body .division p samething*/
+
+
+
+/* (p > h2) or (p  h2) is not allowed */
+
+/* (h2  > p) or (h2 p) is not allowed */
+
+/* but (h2  > p) or (h2  p) is  allowed if there is (div) between  */
+
+
+h2 div p
+{
+ color: rgb(43, 226, 122);
+ background-color:rgb(128, 0, 66);
+
+}
+
+
+
+/*assume if specificty of block are same 0,1,0 and 0,1,0 
+if both modifying same (key:value ) example(background-color:orange) 
+than gofor cascading whichever block execute last will give final result */
+
+
+
+
+
+
+/*div.division  and .division means class */
+/* 1st specity 0,1,1 element =div and class = division 
+2nd specficty 0,1,0 only class=division */
+ body  .division  p
+{
+    color: magenta;
+
+ background-color: aquamarine;
+}

@@ -1,0 +1,43 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #93bfdb;
+}
+
+header {
+    background-color: #7e14da;
+    padding: 20px;
+    color: rgb(155, 221, 15);
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: yellow;
+    color:rgb(49, 40, 214);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+p {
+    text-align: center;
+    color: blueviolet;
+    background-color: aqua;
+}
+
+#buton
+{
+    box-align: center;
+    color:green;
+     background-color:yellow;
+
+
+
+}

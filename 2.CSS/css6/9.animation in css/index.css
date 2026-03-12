@@ -1,0 +1,226 @@
+/* CSS animations:
+to animate css elements
+
+
+@keyframes animationname 
+{
+
+from  { font-size:20px;(intial property) }
+to   { font-size:40px;  (final property) }
+
+}
+
+->
+above this is template for animation
+
+
+
+->
+animation name can "anyname"
+
+
+
+
+animated css element means->
+  We take that element from one state to another state
+
+
+
+
+---->
+animation property(WILL BE DEFINE IN THE ELEMENT where we want apply
+ aniamtion)
+
+
+
+1. animation-name  : name of namtionwe want to apply
+
+example:font_animation
+
+
+
+2. animation-duration:  time animtion will be happening
+
+
+3. animation-timing-function:  way our aniamtion wil bw apply
+      linearly or in step by step
+linear|step|ease-in|ease-out
+
+
+4. animation-delay:how much delay the animation will happen
+
+
+5. animation-iteration-count:  nos of times we want show that animation
+
+example
+
+animation-iteration-count:1,2,3... or infinte
+
+
+6. animation-direction:  normal|reverse|alternate|alternate-reverse
+
+
+
+
+
+
+--->
+Animation shorthand:
+
+
+animation: animation_name: dimision_animation 
+           animation-duration: 2s 
+          animation-timing-function: ease-in
+          ,animation-delay: 0.2s 
+          animation-iteration-count:infinite
+          animation-direction:alternate
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+/* 
+@keyframes font_animation
+{
+
+from  
+{ 
+    font-size:20px; 
+}
+
+to  
+ { 
+    font-size:40px; 
+     }
+
+}
+
+
+
+@keyframes color_animation
+{
+
+from  
+{ 
+    background-color:crimson;
+}
+
+to  
+ { 
+    background-color: yellow;
+     }
+
+}
+
+
+
+
+@keyframes diminsion_animation
+{
+
+from  
+{ 
+   width: 100px;
+   height: 300px;
+}
+
+to  
+ {   width: 400px;
+   height: 500px;
+
+}
+} */
+
+
+
+
+
+/* we can combine ALL PROPERTY IN ONE ANIMATION */
+
+
+
+@keyframes NEW_animation
+{
+
+from  
+{ margin:  0px;
+   width: 100px;
+   height: 300px;
+   font-size:20px; 
+   background-color:crimson;
+
+}
+
+to  
+ {  margin:  150px;
+   text-align: center;
+    width: 400px;
+   height: 400px;
+   font-size:40px;
+    background-color: yellow;
+    border-radius:50%;
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .box
+ {
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+    text-align: center;
+    color: yellowgreen;
+
+
+   /* animation-name: font_animation; */
+
+
+
+     /* animation-name: color_animation; */
+
+
+/*      
+       animation-name: diminsion_animation;
+
+
+
+
+   animation-duration: 2s;
+   animation-timing-function: ease-in;
+   animation-delay: 0.2s;
+   animation-iteration-count:infinite;
+   animation-direction:alternate; */
+
+
+
+/* 
+animation: diminsion_animation 2s ease-in 0.2s infinite alternate-reverse; */
+
+animation: NEW_animation 2s ease-in 0.2s infinite alternate-reverse; 
+
+ }

@@ -1,0 +1,82 @@
+
+/* grid rows:
+
+defines an item's starting and endding position inside the "ROE" ONLY
+
+
+example
+
+grid-row-start:line_number
+
+grid-row-end:line_number
+
+
+
+grid-row:start_row/end_row
+
+grid-row:start_row /span  "number"
+
+
+end row =span "number" + 1
+
+
+
+
+
+ */
+
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color:yellow ;
+    display:grid;
+    /* grid-template-rows:50px 50px 50px 50px 50px ;
+    grid-template-columns:auto auto ;         
+    
+    */
+
+    grid-template-rows:repeat(5,1fr);    
+    
+    grid-template-columns:repeat(3,1fr);         
+/* 
+    row-gap:5px;       
+    column-gap:5px;                                                                                                                                                                                                                                                                                                                          
+*/
+
+    grid-gap:2px 2px;                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                              
+                                                                     
+}
+
+.item
+{
+    
+ width: 100px;
+height:50px;
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+}
+
+.item_one
+{
+
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+
+
+/* 
+grid-row-start:1 ;
+grid-row-end:3 ; */
+
+/* grid-row: 1/3; */
+
+
+grid-row: 1/span 2;
+
+
+
+}

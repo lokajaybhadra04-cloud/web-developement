@@ -1,0 +1,48 @@
+/*attrbute selector */
+
+
+
+input[type="text"]
+{
+  color: aqua;
+  background-color: bisque;
+}
+
+
+input[type="password"]
+{
+  color: rgb(51, 0, 255);
+  background-color: rgb(255, 196, 233);
+}
+
+
+button[id="login"]
+{
+  color:rgb(0, 38, 255);
+  background-color:rgb(235, 92, 92);
+}
+
+
+button[id="signup"]
+{
+  color: rgb(255, 0, 89);
+  background-color: rgb(255, 247, 196);
+}
+
+h1[id="Quora"]
+{
+    color: blueviolet;
+    background-color: chartreuse;
+}
+/* home in "nav" tag*/
+a[id]
+{
+color:aquamarine;
+background-color:rgba(0,  128, 0.371);
+}
+
+p[id="myId"]
+{
+color:green;
+}
+

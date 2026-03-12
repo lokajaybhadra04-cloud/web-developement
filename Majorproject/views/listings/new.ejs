@@ -1,0 +1,99 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container form-container">
+
+<h1 class="form-title">Create a New Listing</h1>
+
+<form action="/listing" method="POST">
+
+```
+<!-- Title -->
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="title" 
+    placeholder="Enter listing title"
+    required>
+</div>
+
+<!-- Description -->
+<div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea 
+    class="form-control" 
+    name="description" 
+    rows="3" 
+    placeholder="Describe your place"
+    required></textarea>
+</div>
+
+<!-- Price -->
+<div class="mb-3">
+    <label class="form-label">Price per Night (₹)</label>
+    <input 
+    type="number" 
+    class="form-control" 
+    name="price" 
+    placeholder="Enter price"
+    required>
+</div>
+
+<!-- Image URL -->
+<div class="mb-3">
+    <label class="form-label">Image URL</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="image"
+    placeholder="https://example.com/image.jpg">
+</div>
+
+<!-- Country -->
+<div class="mb-3">
+    <label class="form-label">Country</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="country"
+    placeholder="Enter country"
+    required>
+</div>
+
+<!-- Location -->
+<div class="mb-3">
+    <label class="form-label">Location</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    name="location"
+    placeholder="Enter city or place"
+    required>
+</div>
+
+<!-- Category -->
+<div class="mb-3">
+    <label class="form-label">Category</label>
+
+    <select name="category" class="form-control" required>
+
+        <option value="">Select Category</option>
+        <option value="Beach">🏖 Beach</option>
+        <option value="Mountain">⛰ Mountain</option>
+        <option value="City">🏙 City</option>
+        <option value="Forest">🌲 Forest</option>
+
+    </select>
+
+</div>
+
+<!-- Submit Button -->
+<button class="btn btn-success create-btn w-100">
+    Create Listing
+</button>
+```
+
+</form>
+
+</div>

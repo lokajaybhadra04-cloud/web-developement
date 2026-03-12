@@ -1,0 +1,41 @@
+*
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+h1,h3
+{
+
+    color: #b92b27;
+}
+
+
+
+#login
+{
+
+background-color: white;
+
+}
+
+#signup
+{
+ background-color: #b92b27;
+ color: aliceblue;
+
+}
+
+.upvote
+{
+background-color: aqua;
+color: aliceblue;
+}
+
+.answer
+{
+    color: blueviolet;
+    background-color: cornsilk;
+    
+}

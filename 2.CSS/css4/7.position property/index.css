@@ -1,0 +1,155 @@
+/* The "position" property of css that set the position in a  document of html element(tag like div)
+  
+  ALso ,The property (this are offset)
+   "
+   "top" 
+   "right"
+  "bottom" 
+  "left" 
+   
+   BOTH determine the final location of positioned elements
+  
+  
+  static:->
+
+  position is static the top ,right ,botom ,left and
+   z index properties have no effect.This is the default value.
+
+  
+  relative :->
+
+  The offset is relative to itself(element (tag) center point we shift to top/left/right/bottom) based on the values of top,right,bottom, and left.
+
+
+  absolute:->
+
+  the element is   "removed from the normal document flow"   , and
+  
+        "no space is created for the element in the page layout" .
+  
+  it is positioned    "relative to it's closest positioned ancestor, if any;"
+  
+  Otherwise,it is placed     "relative to the initial containing block"
+
+
+  fixed:->
+
+
+  the element is removed from the normal document  flow and no space is craeted for the  
+  
+  element in the page layout.
+
+  It's is positioned relative to the "initial containing block" established by the viewport
+  
+   */
+
+
+
+   div{
+
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;
+    border: 2px solid black;
+    margin:20px;
+    display: inline-block;
+   }
+
+
+
+ 
+   #static
+   {
+  background-color: yellowgreen;
+
+
+
+  position: static;  
+  /* for "static "no change will occur as position */
+
+  top:200px ;
+  left:500px ;
+  
+  /*in comparsion of "body" html tag  it shift 200px  top offset 
+    and left offset but due to static no change will reflect */
+
+
+   } 
+
+
+   #relative
+   {
+
+    background-color:brown;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 800px;
+
+    
+
+   }
+
+    /*element (tag) itself   center point we shift to top/left/right/bottom in comparsion it shift 200px top offset 
+    and left offset or bottom or right  change will reflect */
+
+
+
+   #absolute
+   {
+
+    background-color:yellow;
+    position: absolute;
+    top:200px ;
+    bottom:100px;
+    
+    
+ 
+   }
+
+/* form topoffset of the 100px shift form it's ancestor (div-->section-->html body)
+ "html tag"
+ 
+ As parent of "div" is "section" has NO "postion" set so 
+
+ grandparent of "div" as "body" set as position
+
+ top=100px fom "html" body on "html page" is set 
+ 
+ similarly ,
+    
+     for "bottom" also*/
+
+
+  /* 2nd absolute div no space  is created for
+   the element in the page layout for 2nd absolute div */
+
+
+   /* but we can see 2nd relative div space is left for it ,
+    if again came back it's position */
+
+
+
+    #fixed
+    {
+
+    background-color:rgb(131, 153, 222);
+    position: fixed;  
+    top: 200px;
+    left:400px;
+    }
+
+
+
+    /* fixed div 
+    
+    if scroll the html page down the 2nd "FIXED" div wil be
+    "fixed in the screen" 
+    
+    
+    
+    example :
+
+  navagiation bar in wikipedia page is a fixed position in html webpage*/

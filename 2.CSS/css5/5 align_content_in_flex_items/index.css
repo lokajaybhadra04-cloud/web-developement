@@ -1,0 +1,123 @@
+/*align content:
+
+it sets the distribution of space between and around content
+items (inner div's) along a flexbox's(outer div container) cross-axis.
+
+
+
+
+-> justify-content do for flex container (outer div):
+space between the flex items(inner div's) in flex
+ container (outer div) it do work in 
+ "main axis"
+
+
+
+-> align-content   do for flex container (outer div):
+space between the flex items(inner div's) in flex
+ container (outer div) it do work in 
+ "cross axis"
+
+
+
+
+"just like justify-content but in "cross axis"
+
+
+ align-content:flex-start|flex-end|center
+
+
+
+ align-content:space-between|space-around|evenly
+
+
+
+ align-content:baseline
+
+
+  */
+
+
+
+
+
+
+ 
+ 
+ 
+ #container
+{
+    height: 700px;
+    width: 80%;
+    background-color: azure;
+    margin: 20px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+/* 
+ 
+As main axis is left to right (horizontal)
+as flex directiom is row  
+    so in flex container,flex items start from left to right along main axis
+     
+     
+     */
+
+    flex-wrap:wrap;
+
+    /* align-items:baseline; */
+
+    /* align-items :baseline
+    will get the text(context) in inside div align to  the container
+    in the line  of main*/
+
+
+
+
+
+
+
+    align-content:baseline;
+
+
+    /*align-content:baseline
+    
+    will make all flex items align with baseline of 
+    the container (itself) of cross axis
+     */
+
+
+
+/* 
+As cross axis is "top to bottom (vertical)"
+
+as flex direction:row   and main axis is  "left to right (horizontal)"
+
+     so in flex container (outer div),flex  items (inner div) start from top to 
+     bottom along cross axis 
+       
+     */
+
+}
+
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 200px;
+    width: 200px;
+    /* border-radius: 50%; */
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+}

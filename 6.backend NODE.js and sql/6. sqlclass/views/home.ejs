@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;      
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {            
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }   
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;                    
+        }       
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }       
+        button:hover {
+            background-color: #45a049;
+        }                       
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;           
+            color: #777;
+        }
+        footer p {
+            margin: 0;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }               
+        form button {
+            margin-top: 10px;
+        }
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;          
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Home Page</h1>
+    </header>
+    <main>                      
+        <h2>Data Insertion Summary</h2>
+        <p>Here you can view the summary of data inserted into the database.</p>
+        
+        <!-- Correct EJS variable injection -->
+        <h3>Total records inserted: <%= count %></h3>
+        <!-- link to conncet to  http://localhost:8080/users -->
+        <p>Click the button below to view all users.</p>
+        <form action="/users" method="get">
+            <button type="submit">View Users</button>
+        </form>
+
+
+        <h3>Want to add a new user?</h3>
+        <p>Click the button below to add a new user.</p>
+        <form action="/adduser" method="get">
+            <button type="submit">Add User</button>
+        </form>
+
+
+        <button>Join us today!</button>
+    </main>
+    <footer>    
+        <p>&copy; 2025 Your Company</p>
+    </footer>                       
+</body> 
+</html>

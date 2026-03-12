@@ -1,0 +1,68 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+
+<div class="listing-container">
+
+    <h1 class="listing-title"><%= listing.title %></h1>
+
+    <img 
+        src="<%= listing.image %>" 
+        alt="<%= listing.title %>" 
+        class="listing-image"
+    >
+<div class="listing-details">
+
+    <p class="listing-description">
+        <i class="fa-solid fa-align-left detail-icon"></i>
+        <span class="detail-label">Description:</span>
+        <%= listing.description %>
+    </p>
+
+    <p class="listing-price">
+        <i class="fa-solid fa-indian-rupee-sign detail-icon"></i>
+        <span class="detail-label">Price:</span>
+        &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+    </p>
+
+    <p class="listing-location">
+        <i class="fa-solid fa-location-dot detail-icon"></i>
+        <span class="detail-label">Location:</span>
+        <%= listing.location %>
+    </p>
+
+    <p class="listing-country">
+        <i class="fa-solid fa-earth-asia detail-icon"></i>
+        <span class="detail-label">Country:</span>
+        <%= listing.country %>
+    </p>
+     <!-- add location and country and category -->
+    <p class="listing-category">
+        <i class="fa-solid fa-tag detail-icon"></i>
+        <span class="detail-label">Category:</span>
+        <%= listing.category %>
+    </p>
+    
+
+</div>
+
+
+    <div class="listing-buttons">
+
+        <!-- Update -->
+        <form action="/listing/<%= listing._id %>/edit" method="GET">
+            <button class="btn-edit">Update Listing</button>
+        </form>
+
+        <!-- Delete -->
+        <form action="/listing/<%= listing._id %>/delete" method="POST">
+            <button class="btn-delete">Delete Listing</button>
+        </form>
+
+    </div>
+
+    <a href="/listing" class="back-link">Back to all listings</a>
+
+</div>
+
+</body>

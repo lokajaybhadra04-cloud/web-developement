@@ -1,0 +1,49 @@
+/* div{
+    height: 200px;
+    width :200px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 5px;
+    display: inline;
+
+} */
+
+
+/* now div became inline all property like
+height ,width,margin and border or padding (except left and right(vertical border)) is not consider*/
+
+
+/* so we need you to use inline-block so 
+
+"NOW ALL DIV WILL BE ON THE SAME LINE" */
+
+
+div{
+    height: 200px;
+    width :200px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 5px;
+    display: inline-block;
+
+}
+
+
+#fourth
+{
+     height: 200px;
+    width :200px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 5px;
+    display: none;
+    
+}
+
+
+
+
+/* DIV IS BLOCK ELEMENT ALL DIV IN DIFFERERNT LINE ACTUALLLY 
+BUT AS WE APPLY DIV AS DISPLAY: INLINE_BLOCK DIV WILL BEHAVE AS INLINE 
+ALL DIV WILL BE SAME LINE AND ALSO ALL PROPERTY LIKE HEIGHT AND WIDTH AND MARGINS
+PADDING AND  BORDER WILL BE WORKING HERE   */

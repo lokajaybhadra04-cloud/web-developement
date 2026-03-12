@@ -1,0 +1,21 @@
+/*backgroiundd image  */
+div{
+    color: gold;
+    width: 500px;
+    height: 700px;
+   border: 2px solid black;
+   margin: 10px auto;
+    background-image:url("https://i.postimg.cc/ZYQFXfDz/4e2da033-3926-4497-9cfd-5894a923f56a.jpg");
+    background-size:cover;
+    
+    /* background-size : contain|cover|auto
+        
+        contain:(repeat)contain the image and if area left it fill iamge again(default happen)
+        cover : (crop the background-image)
+        auto :(stretch the image) in the background
+
+     */
+
+
+
+}

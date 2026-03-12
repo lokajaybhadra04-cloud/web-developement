@@ -1,0 +1,72 @@
+/* In  flexbox's:
+
+justify content tells how the broswer "distributes space" "between 
+
+and around" content items(flex items ) along the "main axis"
+
+
+
+
+
+
+
+->justify-content :flex-start; (all items goto starting
+                    main axis" left to right )
+
+->justify-content :flex-end; (all items goto starting at end
+                    main axis" right to left )
+
+->justify-content :center; (all items goto center
+                    main axis" right to left )
+
+
+->justify-content :space-between;(all items will be space between
+                                  but if there NO space between exterme left 
+                                  and right along main axis )
+
+
+->justify-content :space-around;(all items will space between
+                                  and also 1/2 space between exterme left and right along main axis )
+
+
+->justify-content :space-evenly;(all items will space between
+                                  but not NO space between exterme left and right along main axis
+                                  but space is evenly(equally) distributed )
+
+
+ */
+
+ #container
+{
+    height: 700px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+
+}
+
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+
+}

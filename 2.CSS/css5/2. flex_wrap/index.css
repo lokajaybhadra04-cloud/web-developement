@@ -1,0 +1,74 @@
+ #container
+{
+    height: 1000px;
+    width: 700px;
+    background-color: azure;
+    margin: 10px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content:flex-start;
+    flex-wrap: wrap-reverse;
+}
+
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 200px;
+    width: 200px;
+    /* border-radius: 50%; */
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+}
+
+
+
+
+
+
+/* flexwrap :
+set  whether flex items are "froced" onto one line or can be 
+wrap onto mutiples lines. 
+
+
+
+if we increase "width 80px --> 200px" and "height 80 px ----> 200px" in case of main
+ axis is "horizontal" OR  "width" respectively.
+
+
+flex-wrap:nowrap; (DEFAULT)(IF FLEX ITEMS  FIT IN ONE LINE . it will
+                            decrease the width of the flex items and 
+                            donot goto  next line,flex items width and height
+                            will be ingore they will be WRAP AROUND .)
+
+felx-wrap:wrap;  (IF FLEX ITEMS NOT FIT IN ONE LINE IT WILL TRY FIT IT.
+                  ELSE GOTO NEXT LINE AND TRY TO FIT IT.)
+
+flex-wrap:wrap-reverse;   wrap it but revesrse format(ALONG CROSS AXIS FLEX ITEMS).
+                          
+                         for  flex direction: row
+                          (the main axis :horizontnal(left to right) 
+                          and cross axis :vertical (top to bottom) )
+                         
+
+                   due to flex-wrap:wrap-reverse
+
+                         for  flex direction: row
+                          (the main axis :horizontal(right to left) 
+                          and cross axis :vertical (bottom to top) )
+                            JUST REVERSE FORMAT
+
+
+
+*/

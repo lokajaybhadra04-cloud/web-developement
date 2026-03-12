@@ -1,0 +1,23 @@
+/*adjacent sibling combinator  all p"selector"  IMMEDIATELY after  h1 "selector" */
+
+h1+p
+{
+ color: aqua;
+ background-color: bisque;
+ text-decoration: underline yellowgreen ;
+}
+
+.division+p
+{
+
+    color: maroon;
+    background-color: chartreuse;
+}
+
+
+.division+p+button
+{
+
+    color: red;
+    background-color:azure;
+}

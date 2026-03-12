@@ -1,0 +1,63 @@
+#container
+{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+/* display: flex ; (In parent div then all child div's will be 
+inside the parent "div")
+
+also all flex item's(child div's will be in row (horizontal axis) 
+by (default)
+direction =row(by default)
+
+
+
+
+if 
+flex-direction in parent divs is row(default) /COLUMN
+
+
+
+ flex-direction:row(by default)
+
+
+ flex-direction:colmun
+
+
+
+
+
+
+all child div is contain in the parent div
+
+their width and height's are ingored and they fit in the parent div(container)
+
+ */
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 100px;
+    width: 500px;
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+
+}

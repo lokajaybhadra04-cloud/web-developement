@@ -1,0 +1,16 @@
+{
+  "name": "6.backend-node.js-and-sql",
+  "version": "1.0.0",
+  "description": "it's javaScript    Runtime Environment",
+  "main": "math.js",
+  "dependencies": {
+    "figlet": "^1.8.1",
+    "random-words": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lokajay",
+  "license": "ISC",
+  "type": "module"
+}

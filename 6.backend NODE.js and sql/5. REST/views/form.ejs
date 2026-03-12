@@ -1,0 +1,11 @@
+<%- include("includes/head.ejs"); %> 
+<body>
+
+    <form method="post" action="/posts">
+        <input placeholder="enter the username" name="username"/><br><br>
+        <textarea placeholder="write your post"name="content"></textarea><br><br>
+        <button>Submit Post</button>
+    </form>
+    <%- include("includes/footer.ejs"); %> 
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* alpha channel set opacity for a color range 0 to 1 (usually hidden )
+ red channel 0 - 255
+ blue channel 0 - 255 
+ green channel  0 - 255
+ 
+ aplha channel  0(color will be not visable)  to  1(color is complttely visable)
+ hex code       00                 to   ff
+ rgba(255,255,alpha value)*/
+
+header {
+    background-color: rgba(0, 255, 0, 0.8);
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color:rgba(28, 237, 0, 0.302);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+
+/* next opacity is used set opacity of the element 
+ranges form 0         to       1
+            hidden    to       visible completely */
+
+
+
+
+
+/*aplha channel set visiblity  of "color".
+  
+  And opacity set visiblity of "element ->all html tag"    */
+
+
+
+  #opacity{
+    background-color: rgba(115, 255, 0, 0.983);
+  
+    width:200px;
+    height: 200px;
+    opacity: 0.2;
+
+  }
+/* above div background color is invisiable 
+also  paragraph in <P> tag is invisiable
+AS opacity of that whole div is set to zero 
+so all property of that div the  opacity value will be applied  */
+
+  div{
+    background-color: rgba(0, 255, 204, 0.2);
+  
+    width:200px;
+    height: 200px;
+
+  }
+/* above 2nd div background color is invisiable 
+but   paragraph in <P> tag is still visiable
+AS rgba(color,opacity of background color only is set zero ,not whole div part)   */

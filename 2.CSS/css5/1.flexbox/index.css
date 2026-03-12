@@ -1,0 +1,82 @@
+/* flexbox :
+
+
+flexible box layout is a one-diminsional layout method for 
+
+"arranging items in rows or columns." 
+
+to use get responsive website 
+
+*/
+
+
+
+ 
+/* the flex model
+
+x aixs or y axis is main axis
+y axis or x axis  is cross axis 
+depend on the direction of flex box
+
+direction xaxis = ROw
+direction yaxis = colnum */
+
+
+
+
+
+/* displaying flex box 
+
+
+flex box container = div
+flex box has flex items = also div's
+
+
+As div is block level element so it occupy browser width
+*/
+
+
+
+
+/* 3 child "div" inside parent "div
+
+if parent div : 
+Display:flex
+
+this parent div container converted to flex container
+
+And 3 child div convert to flex item's and the items layout form
+
+it is define in "flex box"
+
+
+
+display: can  be :
+
+block,inline ,inline-block,now "flex"
+
+
+ */
+
+
+
+
+
+ /* flexbox Direction :
+
+ it sets how flex items are placed in the container,along which
+ axis and direction
+ 
+ 
+ flexbox-direction: row;             main axis  ,left to right 
+ flexbox-direction: row-reverse;     main axis  ,right to left
+ flexbox-direction: column;          cross axis ,top to bottom
+ flexbox-direction: column-reverse;  cross axis ,bottom to top
+ 
+ */
+
+
+
+
+
+

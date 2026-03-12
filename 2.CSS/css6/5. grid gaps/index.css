@@ -1,0 +1,56 @@
+/* grid gap:
+they define the gaps between the lines
+'
+row-gap:
+
+
+column-gap:
+
+shorthand:
+
+
+grid-gap:rowGap column Gap
+
+Also ,grid-gap: 10px means both ROW AND COLUMN
+
+
+ */
+
+
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color:yellow ;
+    display:grid;
+    /* grid-template-rows:50px 50px 50px 50px 50px ;
+    grid-template-columns:auto auto ;         
+    
+    */
+
+    grid-template-rows:repeat(5,1fr);    
+    
+    grid-template-columns:repeat(3,1fr);                                                                                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                                                                                                             
+    /* row-gap: 10px;
+    column-gap: 10px; */
+    
+    /* grid-gap: 10px 30px; */
+    
+    grid-gap:30px;
+                                                                                                                                                                                                                                                                                                                                              
+                                                                      
+}
+
+.item
+{
+    
+ width: 100px;
+height:50px;
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+}
+
+

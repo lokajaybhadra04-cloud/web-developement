@@ -1,0 +1,26 @@
+/* box shadow : it adds shadow effects around an element's frame
+   
+    box-shadow:2px 2px 10px green
+              1st parameter:from x axis how much distance
+              2nd parameter: from y axis how much distance
+              3rd parameter: shadow or blur radius
+              4th parameter :shadow color
+    
+    */
+
+
+div
+{   
+    text-align: center;
+    vertical-align: middle;
+    background-color: aqua;
+    border: 2px solid black;
+    width:200px;
+    height:200px;
+    margin: 10px auto;
+    box-shadow: 2px 2px 30px ;  
+    /* box-shadow color by default black
+      we can also write\
+       box-shadow: 2px 2px 30px black;  */
+   
+}

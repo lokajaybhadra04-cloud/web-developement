@@ -1,0 +1,15 @@
+routing:
+
+
+IN rest  aPI's:
+
+
+ GET  / -> show no of user in db(home page)
+ GET /user ->   show users(email,id,username) in ejs page
+ PATCH /user/:id  -> username  edit
+ 
+ AS homework:
+ 
+ POST /user -> add new user
+ Delete /user/:id -> delete user.
+  like many routes. 

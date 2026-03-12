@@ -1,0 +1,435 @@
+
+
+
+/* css transfrom
+this property let you rotate,scale,skew or translate
+the HTMl elements */
+
+
+section
+{
+    margin-top: 10px;
+}
+
+div
+{
+width: 200px;
+height: 200px;
+text-align:center;
+background-color:lawngreen;
+border: 2px solid black;
+margin: 200px ;
+
+}
+
+
+
+
+
+
+
+
+
+div:nth-of-type(2n)
+{
+    background-color: aqua;
+    border: 2px solid black;
+}
+
+
+div:nth-of-type(3n)
+{
+    background-color: brown;
+    border: 2px solid black
+}
+
+
+
+/* transfrom start....... */
+
+/* 1. rotate */
+
+/* 45 deg rotate is  oppisite direction we gernally measure   */
+
+
+
+/* #one
+{
+    transform:rotate(45deg);
+
+}
+
+#two
+{
+    transform:rotate(-45deg);
+
+}
+
+
+#three
+{
+    transform:rotate(45deg);
+
+}
+
+
+#four
+{
+    transform:rotate(45deg);
+
+}
+
+
+#five
+{
+    transform:rotate(45deg);
+
+}
+
+
+#six
+{
+    transform:rotate(45deg);
+
+}
+ */
+
+
+
+/* 2.scaling :
+
+
+  it is 2d scaling  */
+
+
+
+/*
+
+#one
+{
+    transform:scale(1.5);
+
+}
+
+#two
+{
+    transform:scale(1.5);
+
+}
+
+
+#three
+{
+    transform:scale(1.5);
+
+}
+
+
+#four
+{
+    transform:scale(1.5);
+
+}
+
+
+#five
+{
+    transform:scale(1.5);
+
+}
+
+
+#six
+{
+    transform:scale(0.5);
+
+} */
+
+/* we can scale in 2d X and Y direction differently */
+
+
+
+/*
+
+#one
+{
+    transform:scale(0.5,1.5);
+
+}
+
+#two
+{
+    transform:scale(1.5,0.8);
+
+
+}
+
+
+#three
+{
+    transform:scale(1.5,0.3);
+
+}
+
+
+#four
+{
+    transform:scale(1,2);
+
+}
+
+
+#five
+{
+    transform:scale(1,1);
+
+}
+
+
+#six
+{
+    transform:scale(0.5,1.5);
+
+}
+
+
+
+ */
+
+
+
+
+
+
+/* we can scale in Y direction only */
+
+
+
+
+
+/* #one
+{
+    transform:scaleY(2);
+
+}
+
+#two
+{
+    transform:scaleY(1.9);
+
+}
+
+
+#three
+{
+    transform:scaleY(1.5);
+
+}
+
+
+#four
+{
+    transform:scaleY(1.2);
+
+}
+
+
+#five
+{
+    transform:scaleY(1.1);
+
+}
+
+
+#six
+{
+    transform:scaleY(3);
+
+}
+ */
+
+
+
+/* we can scale in X direction only */
+
+
+
+
+
+/* #one
+{
+    transform:scaleX(2);
+
+}
+
+#two
+{
+    transform:scaleX(0.8);
+
+}
+
+
+#three
+{
+    transform:scaleX(1.5);
+
+}
+
+
+#four
+{
+    transform:scaleX(1.2);
+
+}
+
+
+#five
+{
+    transform:scaleX(1.8);
+
+}
+
+
+#six
+{
+    transform:scaleX(0.5);
+
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+/* 3.translate  :
+
+ move  html element (tag)x,y axis in 2d plane only not 3d plane
+
+ transfrom:translate(x px , y px) */
+ 
+ 
+ 
+ /*
+ "both x and y axis must be there"
+ */
+
+ /*dispalcement unit can  be in    px,rem,em,%  */
+
+
+
+
+ #one
+{
+    transform:translate(50px,50px);
+
+}
+
+#two
+{
+    transform:translate(100px,100px);
+
+}
+
+
+#three
+{
+    transform:translateY( 350px);
+/*we can also translate only along Y axis  only*/
+}
+
+
+#four
+{
+    transform:translateX(300px);
+  /* we can also translate only along X axis only */
+}
+
+
+#five
+{
+    transform:translate(70px,100px);
+
+}
+
+
+#six
+{
+    transform:translate(200px,-200px);
+     /* we can also translate only along -Y or -X axis also */
+
+
+} 
+
+
+
+
+
+
+
+/* 4. SKEW :
+
+html element (tag as div) border will get  "TILTED"
+
+transform:skew(30 deg on (x axis),40 deg on (y axis))
+
+ */
+
+ #one
+{
+    transform:skew(30deg,40deg);
+
+}
+
+
+/* we skew on only x AND y axis and also -ve deg also */
+
+ #two
+{
+    transform:skewX(30deg);
+
+}
+
+ #three
+{
+    transform:skewY(-30deg);
+
+}
+
+#five
+{
+    transform:skewY(-90deg);
+    /* skew(-90 deg) it titled the div into single thin line
+    so div 5 has became invisible */
+
+}
+
+#six
+{
+
+    transform: skew(30deg);
+
+    /* skew is both x and y  axis of 30 deg */
+}
+
+
+
+
+/* All property 
+1.rotate      (for x and y axis both in one value=30deg)
+2.scale       (for x and y axis both in one value=2)
+3.skew        (for x and y axis both in one value=30deg)
+4.translate   (for x and y axis both in one value=50px)
+can given in the together*/
+
+
+
+#four
+{
+    transform: rotate(30deg)translate(150px,150px) skew(40deg) scale(2);
+}

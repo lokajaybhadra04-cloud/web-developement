@@ -1,0 +1,51 @@
+/* grid template 
+
+they define the lines & track sizing
+
+
+grid-template-rows:100px 100px 100px
+
+
+for 3 track of width 100px ( in rows)
+
+
+
+grid-template-colmuns:100px 100px 100px
+
+for 3 track of width 100px ( in colmuns)
+
+we can use auto it divided the space equally
+
+grid-template-colmuns /row:auto  (single column)
+
+if write
+
+grid-template-colmuns /row:auto auto (two colmons get equally divided)
+
+
+ */
+
+
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color:yellow ;
+    display:grid;
+    grid-template-rows:50px 50px 50px 50px 50px ;
+    grid-template-columns:auto auto ;                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+}
+
+.item
+{
+/* width: 100px;
+height:50px; */
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+}
+
+/* as we comment out width and height of items it will try fill
+individually occpied the grid cells */

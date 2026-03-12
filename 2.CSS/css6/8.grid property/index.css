@@ -1,0 +1,125 @@
+
+/* common grid properties:
+
+
+for horrizontal
+ justify-items  start(default)|end     (container)
+justify-self                           (individual item)
+
+
+
+for vertical
+ align-items       (container)
+align-self         ( individual item)
+
+
+
+
+
+
+->place-items:
+justitfy-items and align-items are SAME  ONLY we can use this 
+for enitre "CONTAINER"
+
+
+
+
+->place-self:
+justitfy-self and align-self are SAME  ONLY we can use this 
+for indivial "grid items"
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+.container
+{
+    width:600px;
+    height: 300px;
+    background-color:yellow ;
+    /* display: grid; */
+    
+       display:inline-grid;
+
+  /* display :grid
+  
+  make the "CONTAINER" as "block items like "div"
+  if write anyhthing after container(outer div)
+  it will be written in the next line after the 
+  container even though it has space 
+  so 
+    display:inline-grid
+
+    then the text written in the same line of the conatiner
+  
+  */
+
+
+
+
+
+    /* grid-template-rows:50px 50px 50px 50px 50px ;
+    grid-template-columns:auto auto ;         
+    
+    */
+
+    grid-template-rows:repeat(4,1fr);    
+    
+    grid-template-columns:repeat(3,1fr);         
+/* 
+    row-gap:5px;       
+    column-gap:5px;                                                                                                                                                                                                                                                                                                                          
+*/
+
+    grid-gap:2px 2px;   
+    
+    /* justify-items:center;                                                                                                                                                                                                                                                                                                                                      
+    align-items:end ;                                                                                                                                                                                                                                                                                                                                           */
+
+   /* if both justitfy-items and align-items are SAME  ONLY we can use this 
+for enitre "CONTAINER" */
+
+place-items:center;
+
+
+}
+
+.item
+{
+    
+ width: 100px;
+height:50px;
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+/* place-self:center; */
+
+}
+
+.item_one
+{
+        
+ width: 100px;
+height:50px;
+
+border:2px solid black;
+background-color: greenyellow;
+text-align: center;
+
+/* justify-self: end;
+align-self:self-end; */
+
+
+place-self:end;
+
+
+}

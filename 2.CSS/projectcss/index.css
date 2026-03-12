@@ -1,0 +1,707 @@
+
+*{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    
+    background-color: #000;
+    color: #fff;
+    overflow:hidden;
+  }
+
+
+
+
+  .main{
+
+ display: flex;
+ height:100vh;
+ padding:0.5rem;
+
+}
+
+
+
+
+
+a{
+  text-decoration: none;
+  color:#fff;
+}
+
+
+.nav{
+
+  background-color: #121212;
+  border-radius: 1rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 140px;
+  margin: 0.5rem;
+  padding: 0.4rem 0.5rem ;  
+  margin:0rem 0.3rem 0.4rem -1rem;
+/* 0.6rem =0.6*48px  and 0.8rem=0.8*48px */
+
+
+}
+
+
+
+.nav-option{
+  line-height: 2.5rem;
+  opacity: 0.7;
+  padding: 0.5rem 0.8rem;
+  background-color: #121212;
+}
+
+
+.nav-option i
+{
+  font-size: 1.25rem;
+  
+  background-color: #121212;
+  margin:0.3rem 0.3rem 0rem 0.3rem
+
+}
+
+
+.nav-option a
+{
+  font-size:1.2rem;
+  margin-left: 1rem;
+  background-color: #121212;
+  margin:0.3rem 0.3rem 0rem 0.3rem
+}
+
+
+.nav-option:hover{
+  opacity: 1;
+
+}
+
+
+
+.icons
+{
+font-size: 1.25rem;
+
+display: flex;
+background-color: #121212;
+}
+
+.icons i{
+
+  opacity: 0.6;
+  margin-right: 0.9rem;  
+
+}
+
+
+.icons i:hover
+{
+
+opacity: 1;
+
+}
+
+
+
+.library
+{
+
+  background-color: #121212;
+  border-radius: 1rem; 
+ 
+  height:100%;
+ margin:0.3rem 0.3rem 0rem -0.1rem
+ 
+}
+
+.options
+{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+
+  background-color: #121212;
+  margin:0.3rem 0.3rem 0rem 0.1rem;
+  
+
+}
+
+
+.lib-option {
+
+  background-color: #121212;
+}
+
+
+.lib-option img
+{
+  height:1.25rem;
+width:1.25rem;
+  background-color: #121212;
+
+
+}
+
+.lib-option a
+{
+  background-color: #121212;
+
+}
+
+
+
+
+.lib-option i
+{
+  background-color: #121212;
+
+
+}
+
+.lib-option a
+{
+  background-color: #121212;
+
+}
+
+.icons
+{
+  margin-right:2rem;
+}
+
+.icons i
+{
+  background-color: #121212;
+
+
+}
+
+.icons a
+{
+  background-color: #121212;
+
+}
+
+.lib_box
+{
+
+
+  background-color: #121212;
+  width:15.5rem;
+
+}
+
+
+.box
+{
+
+background-color:#232323;
+
+border-radius:0.4rem;
+margin-bottom:1rem;
+
+padding: 0.5rem;
+
+
+}
+
+.box_p1
+{
+margin: 0.1rem;
+background-color: #232323;
+opacity: 1;
+font-weight:550;
+
+
+
+}
+ .box_p2
+ {
+  font-size:0.75rem;
+  opacity: 0.6;
+  
+
+ }
+
+ .badge
+ {
+
+ font-weight: 700;
+ background-color: #fff;
+ color: #000;
+ margin: 0.6rem;
+ padding: 0.5rem;
+ border-radius:0.8rem;
+
+ }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .sidebar{
+    background-color: #000;
+    width: 280px;  
+    border-radius: 1rem;   /* 1rem =48px as font size fontfamily Montserrat */
+  
+  }
+
+  .main-content
+  {
+  background-color:#121212;
+  flex: 1;
+  color:#fff;
+  border-radius: 1rem;
+  overflow:auto;
+
+/* "overflow" to scroll in main content */
+  }
+
+
+
+  .main_nav{
+
+    position:sticky;
+    top:0;
+    background-color: #121212;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 0rem 1rem 0rem;
+    z-index: 5;
+  }
+
+  .nav-icons
+  {
+    margin-left:1rem;
+  }
+
+
+  .nav-icons img
+  {
+
+    height:1.2rem;
+    width:1.2em;
+  }
+
+
+
+  .nav-options{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+
+  }
+  
+
+  .nav-optionitem
+  {
+    margin-right: 1rem;
+  }
+
+
+  .dark-badge{
+  background-color:#000;
+  color: #fff;
+  }
+
+
+
+
+  @media( max-width:1000px)
+  {
+   .hide
+   {
+    display:none;
+   }
+
+
+
+  }
+
+
+
+  .card_container{
+
+    background-color:  #35303052;
+
+  }
+   
+
+  .card-title
+  {
+
+    background-color:  #35303052;
+    color:#fff; 
+    opacity: 1;
+    font-weight: 700;
+  
+    padding-left: 1rem;
+    padding-right: 2rem;
+  
+    margin-left: 1rem;
+    margin-top:-1rem;
+ 
+  }
+
+  .card img{
+
+    padding:1rem 1rem 0rem 1rem;
+     width:35vh;
+     height:35vh;
+     background-color:  #35303052;
+     border-top-left-radius: 1.5rem;   
+     border-top-right-radius: 1.5rem;  
+     margin-left: 1rem;
+     margin-bottom: 1rem;
+  
+
+  }
+
+ h2
+ {
+  font-size: large;
+  opacity: 1;
+  margin-left: 0.5rem;
+  font-weight: 600;
+ }
+
+  .card{
+
+background-color: #35303052;
+height:18rem;
+ width:14rem;
+margin-left:-1rem;
+margin-right:1rem;
+ border-top-left-radius: 1.5rem;
+ border-top-right-radius: 1.5rem;
+
+
+
+  }
+
+
+.card:hover{
+
+  box-shadow: 0.05rem 1rem 1rem gray;
+
+}
+
+
+
+
+
+
+  .card-info
+  {
+    padding:1rem 0rem 1rem 0rem;
+    background-color:  #35303052;
+    margin-top:-0.5rem;
+    margin-bottom: 0.1rem;
+    margin-left: 2rem;
+  }
+  
+
+  .card_container2
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+
+
+
+.footer
+{
+  height: 20rem;
+  display: flex;
+  align-items: center;
+
+}
+
+
+.line{
+
+
+  width:95%;
+  height:50%;
+  border-top:1px solid #fff;
+  margin-left: 1rem;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+  .music-player{
+    background-color: #121212;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    height: rem;
+    display: flex;
+    bottom: 0rem;
+  justify-content:space-around;
+  align-items: center;
+    
+
+  }
+
+  .player-icons
+  {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-left: -4rem;
+      
+  }
+
+
+
+  .icon_image{
+
+ 
+    height:1.5rem;
+    width:1.5rem;
+   
+
+  }
+
+  .song_pic
+  {
+    height:3rem;
+    width:3rem;
+    margin-right:4rem;
+
+  }
+
+
+.player-title
+  {
+
+    display: grid;
+    margin-bottom: 1rem;
+    margin-left:-3rem;
+ 
+
+  }
+
+  .lower_title{
+
+    font-size:0.9rem;
+    opacity: 0.7;
+    font-weight: 400;
+   
+
+  }
+
+  .lower_title:hover
+  {
+
+  text-decoration: 1px underline white;
+  opacity: 1;
+  font-weight: 500;
+
+  }
+
+ .up_title
+ {
+
+  font-size:0.9rem;
+  opacity: 1;
+  font-weight: 600;
+ 
+
+
+ }
+
+
+
+  
+ .player-title-icon
+ {
+
+  display: flex;
+  margin-left: 1rem;
+ }
+
+
+  .player-controls
+  {
+
+ 
+    height:3.9rem;    
+    bottom:0rem;
+  
+
+  }
+
+
+  .bar_icons
+  {
+
+    margin-left: 3.5rem;
+    
+
+  }
+  
+
+  .img1{
+
+    
+    height:1rem;
+    width:1rem;
+    margin-left: 1rem;
+    opacity: 0.3;
+  }
+
+
+  .img2
+  {
+  
+    opacity: 0.85;
+    margin-left:1rem;
+
+  }
+
+  .img1:hover{
+
+    opacity: 1;
+  }
+
+ .img2:hover{
+
+    opacity: 1;
+  }
+
+.music_bar
+{
+
+  width:15rem ;
+  height:1.8em;
+  appearance: none;
+ background-color: transparent;
+ cursor: pointer;
+ 
+
+
+}
+
+
+
+.music_bar::-webkit-slider-runnable-track
+{
+
+  background-color: #ddd;
+  border-radius: 8rem;
+  height:0.3rem;
+
+}
+
+
+.music_bar::-webkit-slider-thumb
+{
+
+appearance: none;
+height: 0.7rem;
+width:0.7rem;
+border-radius: 50%;
+background-color: #1bd760;
+
+
+margin-top:-0.2rem;
+
+
+}
+
+
+
+
+
+
+
+
+.player-icons77
+ {
+
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+ }
+
+
+
+.img {
+
+
+  height:1.5rem;
+  width:1.5rem;
+ padding-right:0.3rem;
+  
+ }
+
+.input{                                                              
+  width:8rem ;
+  height:1.8em;
+  appearance: none;
+ background-color: transparent;
+ cursor: pointer;
+  
+ }
+
+
+
+
+ .input::-webkit-slider-runnable-track
+ {
+ 
+   background-color: #ddd;
+   border-radius: 8rem;
+   height:0.3rem;
+ 
+ }
+ 
+ 
+ .input::-webkit-slider-thumb
+ {
+ 
+ appearance: none;
+ height: 0.7rem;
+ width:0.7rem;
+ border-radius: 50%;
+ background-color: #1bd760;
+ 
+ 
+ margin-top:0.5rem;
+ 
+ 
+ }
+ 

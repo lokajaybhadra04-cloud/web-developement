@@ -1,0 +1,15 @@
+
+/*descendent selector*/
+div p
+{
+
+color: aqua;
+background-color: beige;
+
+}
+span p
+{
+
+    color: cornflowerblue;
+
+}

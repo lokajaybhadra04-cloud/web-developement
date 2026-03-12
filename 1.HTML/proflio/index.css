@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+}
+
+header {
+    background-color: #282c34;
+    padding: 1px;
+    color: white;
+    text-align: center;
+}
+footer {
+    background-color: #282c34;
+  
+    color: white;
+  
+}
+
+main {
+    padding: 20px;
+}
+
+.image{
+    width:30px;
+    height: 40px;
+    
+
+}
+
+.ab{
+    text-align:left;
+    background-color:coral
+}
+
+
+
+p {
+    text-align: center;
+}
+
+.con
+{
+    text-align: center;
+}

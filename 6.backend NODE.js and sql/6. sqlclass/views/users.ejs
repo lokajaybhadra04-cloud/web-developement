@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users page</title>
+    <style>
+        table,tr,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;      
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {            
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }   
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;                    
+        }       
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }       
+        button:hover {
+            background-color: #45a049;
+        }                       
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        table {       
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }   
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }   
+        th {
+            background-color: #f2f2f2;
+        }               
+        td {
+            background-color: #fff;
+        }                       
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }                           
+
+    
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        tr {
+            transition: background-color 0.3s ease;
+        }
+        td {
+            word-break: break-word;
+        }
+        th {    
+            text-align: center;
+        }   
+        td {
+            text-align: center;
+        }
+        h2 {
+
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center; 
+
+            color: #555;
+            font-size: 1.1em;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            font-size: 0.6em;
+        }
+        button:hover {  
+
+            background-color: #45a049;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #4CAF50;
+        }
+        button:active { 
+            background-color: #3e8e41;
+            transform: translateY(2px);
+        }
+        button:disabled {   
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+
+        button:disabled:hover {
+            background-color: #ccc;
+        }
+
+        button:disabled:active {
+            background-color: #ccc;
+            transform: none;
+        }
+        button:disabled:focus {
+
+
+            box-shadow: none;
+        }       
+        button:disabled:hover {
+            cursor: not-allowed;
+        }
+        button:disabled:active {
+            background-color: #ccc;             
+            transform: none;    
+        }
+        button:disabled:focus {     
+            box-shadow: none;
+        }
+
+        button:disabled:hover {
+            cursor: not-allowed;
+        }
+        button:disabled:active {
+
+            background-color: #ccc;
+            transform: none;
+        }
+        button:disabled:focus {
+            box-shadow: none;
+        }
+        button:disabled:hover {     
+            cursor: not-allowed;
+        }
+
+
+        button:disabled:active {
+            background-color: #ccc;
+            transform: none;
+        }   
+        button:disabled:focus {
+            box-shadow: none;
+        }
+        button:disabled:hover {
+            cursor: not-allowed;
+
+
+    
+            background-color: #ccc;
+        }       
+        button:disabled:active {
+            background-color: #ccc;
+            transform: none;
+        }
+        button:disabled:focus {
+            box-shadow: none;           
+        }           
+        button:disabled:hover {
+            cursor: not-allowed;
+        }       
+        
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to user details page</h1>
+    </header>                       
+    <main>
+        <h2> details of all users  user id,username,email- in table </h2>
+        <p>Here you can view the details of all users in the database.</p>  
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.id %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;<%= user.username %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= user.email %></td>
+                    <td>
+                         <form method="GET" action="/user/<%=user.id%>/edit">
+                        <button>Edit username</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="GET" action="/user/<%=user.id%>/delete">
+                         <button type="submit">Delete</button>
+                        </form>
+                    </td>
+
+                    </tr>
+                <% }) %>
+            </tbody>
+   
+      
+    </main>
+    
+
+
+        <button>Join us today!</button>
+</html>

@@ -1,0 +1,90 @@
+/* * Media Queries 
+
+help create a "responsive" website
+
+
+website view according the device it is runing
+
+
+DEVICE/enviroment :has property
+
+ 1. device-width
+ 2. device-height
+ 3. orientation->landscape,portrait (mode of device)
+ (most used are above three)
+ 4. hover
+ 5. forced_colors
+ 6. display-mode
+
+
+
+ 
+ 
+ ------>
+
+ after device height and width next see orientation
+
+
+@media(orientation:landscsape)
+
+{
+
+ div{
+
+  background-color:red;
+
+     }
+
+ }
+
+
+
+
+ */
+
+
+
+
+/* 
+ h1{
+
+    background-color:yellowgreen;
+
+}
+
+div{
+
+    background-color:green;
+
+}
+   */
+
+
+
+
+
+@media(orientation:landscape)
+
+{
+
+    h1{
+        background-color:aquamarine ;                                              
+        color:brown;
+        
+         }
+     
+      div
+       {
+         width: 100px;
+         height: 100px;
+         background-color:darkred;
+         color:navy;
+        
+        }
+     
+
+ }
+
+
+
+

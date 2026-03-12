@@ -1,0 +1,56 @@
+/* h2 and div are block element converted to inlline element
+and span inlline element converted into block element */
+
+
+
+h2{
+    display: inline !important; 
+    /*this will never change but if higher speficlity element
+     came it can be changed*/
+    background-color:bisque;
+    border: 2px solid black;
+    
+width: 100px;
+height: 100px;
+padding: 50px;
+margin: 10px;
+}
+
+
+span
+{
+ 
+    display: block;
+background-color:yellowgreen;
+border: 2px solid black;
+width: 100px;
+height: 100px;
+padding: 50px;
+margin: 20px;
+}
+
+div{
+    display: inline;
+background-color:bisque;
+border: 2px solid black;
+width: 100px;
+height: 100px;
+padding: 50px;
+margin: 5px;
+}
+
+/* gerenally "span" is inline element is converted to block element here in this code
+ 
+1.  In "block element" the "height" and "width"  and "padding" and "margin " both vertical aND HORIZONTAL
+   top and bottom is added. 
+  
+  
+  But, "div" and "h2" are block element converted to inline element here in this code
+  
+1. In "inine element" the  the "height" and "width" and and "margin"  horizontal(top and bottom)
+    is NOT work, margins will work only vertical(left and right) .
+
+2.  In "inline element"  padding work on all sides but the top and bottom may overlap other elements
+     so it will not work horizontal(top and bottom ) but work for vertical (left and right )
+   like margins
+ */

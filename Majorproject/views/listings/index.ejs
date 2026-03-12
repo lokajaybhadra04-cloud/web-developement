@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+
+<form action="/listing" method="GET" class="mb-4">
+
+<input
+type="number"
+name="minPrice"
+placeholder="Min Price"
+class="form-control mb-2"
+value="<%= typeof minPrice !== 'undefined' ? minPrice : '' %>"
+>
+
+<input
+type="number"
+name="maxPrice"
+placeholder="Max Price"
+class="form-control mb-2"
+value="<%= typeof maxPrice !== 'undefined' ? maxPrice : '' %>"
+>
+
+<select name="category" class="form-select mb-2">
+
+<option value="">All Categories</option>
+
+<option value="Mountain" <%= category === 'Mountain' ? 'selected' : '' %>>
+Mountain
+</option>
+
+<option value="Forest" <%= category === 'Forest' ? 'selected' : '' %>>
+Forest
+</option>
+
+<option value="Beach" <%= category === 'Beach' ? 'selected' : '' %>>
+Beach
+</option>
+
+<option value="City" <%= category === 'City' ? 'selected' : '' %>>
+City
+</option>
+
+</select>
+
+<button class="btn btn-danger">Filter</button>
+
+</form>
+
+
+<!-- LISTINGS GRID -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+
+<% listings.forEach(listing => { %>
+
+<div class="col">
+
+<div class="card listing-card h-100">
+
+<img 
+src="<%= listing.image %>" 
+class="card-img-top"
+alt="Listing Image"
+>
+
+<div class="card-body">
+
+<a 
+href="/listing/<%= listing._id %>"
+class="text-decoration-none"
+>
+
+<h5 class="card-title">
+<strong><%= listing.title %></strong>
+</h5>
+
+</a>
+
+<p class="card-text">
+₹<%= listing.price.toLocaleString("en-IN") %> / night
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</div>

@@ -1,0 +1,370 @@
+
+
+Git: free & open sorce version control system(tols tha help to tracks change in code).
+
+
+track history ,
+help to collaborate.
+
+
+
+github: website where we host repositories(online folders) online.
+
+
+
+
+how to use git:
+
+command line
+
+IDE/code editors(like vscode)
+
+grpahical user interface (like gitkraken)
+
+
+
+
+
+
+
+
+
+
+
+
+configuring git:- storing and  setuping our  username & email inside git
+
+
+
+git config --global  user.name "My Name"
+
+git config --global  user.email"someone@email.com"
+
+
+git config --local  user.name "My Name"
+
+git config --local  user.email"someone@email.com"
+
+
+then :
+
+
+
+git config --list
+
+
+
+
+
+
+
+
+
+
+
+
+
+using "vscode" we access  git:
+
+
+
+clone: cloneing a repository on our local machine
+
+example:
+
+git clone <-some link->
+
+status: displays the state of the code
+
+example:
+
+git status
+
+file saved 2 stges:
+
+1. add file :         git add filename ,  " git add .  "(for all in one go)
+
+2.commit the file:      git commit -m "some message"
+
+
+
+
+
+
+
+
+
+Also 
+
+push: upload local repo content  to remote repo
+
+
+git push origin main
+
+
+
+
+
+
+
+
+
+
+we  want make diretoocry into git hub resportatry into our local system:
+
+
+init->   used to create a new git repo    
+
+
+git init,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To add all projects add from local system to github online:
+
+git remote add origin <-link->, 
+(it will create remote by push an existing repository from the command line )
+
+
+
+
+
+git remote -v (to verfiy remote where we push or fetch the file),
+
+
+
+
+git branch (to check branch),
+
+
+
+
+git branch -M main (to renmame branch),
+
+
+
+
+
+git push origin main (push the main branch)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git branches commands:
+
+
+
+git branch (to check branch)
+
+git  branch -M main (to rename branch called  "main")
+
+git checkout <-branch name->  (to navigate into the branches)
+
+git checkout -b <-new branch name-> (to create new  branch)
+
+git branch -d <-branch name-> (to delete branch)
+
+
+
+
+
+
+
+
+
+
+
+
+
+to setup stream of push to some branch:
+
+
+git push -u origin master(some branch == master)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+merage the branches:
+
+
+git diff <-branch name we want compare with current branch->       (to compare commits ,branches,files & more)
+
+git merge <-branch name->        (to merage 2 branches)
+
+OR 
+
+create a PR(pull request)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//any thing updsted in  github 
+//we want update into local machine
+
+
+git pull orgin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//merge conflicts:
+
+an event  that takes when git is unable to automically resolve difference in code between two commits
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fixing mistakes:
+
+
+case1: staged changes  //unadded the changes
+
+     git reset <-file name->
+
+     git reset
+
+case2: commited changes (for one commit)
+
+     git reset HEAD~1  (head pointer pointing to last commit )
+
+
+
+case3: commited changes (for many commits)
+
+     git reset <-commit hash->
+
+     git reset --hard <-commit hash->
+
+
+
+
+
+
+
+     to get info all commit:
+
+     git log      (Q to clear out of log)  to get  "hash "  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     forking:
+
+     a fork is a new repository that shares code and visiblity settings with the origanl "upstream" repository
+
+     fork is a rough copy.cd

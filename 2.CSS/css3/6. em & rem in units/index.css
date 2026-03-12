@@ -1,0 +1,136 @@
+/* typoographical (text related )properties like font-size,font-weight
+   other properties width,height,padding 
+   if we want set properties of "tag" with respect  it's parent"tag"
+   or itself then we use "em "    
+   "em" prounce as M*/
+
+
+
+   #outer
+   {
+
+  height:400px;
+
+  width: 400px;
+
+  border: 2px solid black;
+    background-color: brown;
+    font-size: 15px;
+
+   }
+
+/* now we want to change the font-size,font-weight(size of letter on div tag) of inner div  relative to 
+  size of outer div   */
+  /* font-size of inner div = 2* times of font size of outer size
+   we us  "2em" */
+
+   #inner
+   {
+   height:200px;
+
+   width: 200px;
+
+   background-color: cornflowerblue;
+   font-size: 2em;
+   padding:1.5em;
+
+
+   }
+
+   /*we want to padding of inner div it will be relative 
+   to inner div  font size (2*15px(outer div font size)=30px(inner div fontsize)
+    1.5*30px(inner div font-size)=45px padding(inner ddiv padding)) ITSELF than   
+    
+    padding ,height,width is property that depend on it's own element(inner div here)
+   fontsize padding */
+
+
+/* button
+{
+
+font-size:25px;
+border-radius: 15px;
+border: 5px solid greenyellow;
+padding-left: 20px;
+padding-right: 20px;
+
+} */
+
+/*if we give font size =100px or 20px 
+padding size decrease or increase respesctively (actually)
+but  we want as font-size increase relativly padding also
+ increase
+ also  font-size decrease relativly padding also
+ decrease so we used "em" in place of "px"  
+ 
+ fontsize = 20px
+  than
+  padding is 2rem= 2 times(fontsize)= 2*20px= 40px*/
+
+ button
+{
+
+font-size:20px;
+border-radius: 15px;
+border: 5px solid greenyellow;
+padding-left: 2em;
+padding-right: 2em;
+
+}
+
+
+/* "em" have problem called SNOWBALL EFFECT*/
+
+/* div{
+
+
+   font-size: 2em;
+} */
+
+
+/* div 1 fontsize=x
+  div 2 fontsize=2*(font-size of div 1)
+  div 3 fontsize=2*(font-size of div 2)
+  IT SHOULD Not happen*/
+
+section
+{
+font-size: 25px;
+
+}
+
+/*section fontsize-=25px 
+  div 1 fontsize=2*(font-size of section)=50px
+  div 2 fontsize=2*(font-size of div 1)=100px
+  div 3 fontsize=2*(font-size of div 2)= 200px
+  
+  now if we write*/
+  
+  
+  /* div
+  {
+  font-size:0.5em
+  } */
+   /* then every "div" will be  reduce by 1/2 */
+  
+
+
+
+/* To elimate the snowball effect we used "rem" in palce "em" 
+
+"fontsize"  will be relative of the root element (itself (html))
+ 
+ html(root)-->section-->div-->div-->div-->div
+
+until now  "em"  is set relative to parent or itself
+now  "rem" is set relative root element(html)*/
+
+div{
+
+
+   font-size: 2rem;
+}
+
+/* section font size 25px
+ALL DIV WILL BE SAME
+fontsize of all div=2*(fontsize section) */

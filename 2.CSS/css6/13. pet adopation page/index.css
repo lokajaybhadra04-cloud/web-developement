@@ -1,0 +1,68 @@
+.card
+{
+width: 400px;
+
+text-align: center;
+border: 3px solid black;
+border-radius: 20px;
+display: inline-block;
+padding: 10px;
+margin: 10px;
+
+}
+
+
+
+img
+{
+width: 100%;
+border-radius: 20px;
+
+
+}
+
+
+#pets
+{
+
+display:flex;
+justify-content: space-evenly;
+
+
+}
+
+
+
+h4 {
+    text-align: right;
+    color: #3c787e;
+  }
+
+
+  h2 {
+    color: #d56f3e;
+  }
+  
+  span {
+    color: #9d6f24;
+  }
+
+/* we need set width according  to the device width by below this */
+
+
+
+@media(max-width:375px) 
+{
+
+
+    #pets
+    {
+    
+
+    flex-wrap:wrap ;
+    }
+    
+    
+
+
+}

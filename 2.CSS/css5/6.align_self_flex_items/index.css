@@ -1,0 +1,104 @@
+
+/*Until  we use align-items, we align flex items   "with respect to"   flex container (outer div) 
+
+
+Here align-self, we aligns a flex item(inner div)   "indivdially" 
+along the cross axis
+
+
+Also Important 
+
+align-items: use for groups of flex items.
+
+align-self: use for individual flex items.
+
+
+
+
+
+
+
+"align-self  >>priorty>> align-items"    
+
+
+
+
+
+
+
+
+align-self:flex-start;
+
+
+align-self:flex-end;
+
+align-self:center;
+
+align-self:baseline;
+
+
+
+ */
+
+
+ 
+ 
+ 
+ #container
+{
+    height: 700px;
+    width: 80%;
+    background-color: azure;
+    margin: 20px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+
+/* 
+    flex-wrap:wrap; */
+
+    align-items:baseline;
+
+
+
+
+
+    align-content:baseline;
+
+
+
+
+
+}
+
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 200px;
+    width: 200px;
+    /* border-radius: 50%; */
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+}
+
+
+
+
+
+#org
+{
+    
+align-self:flex-end;
+}

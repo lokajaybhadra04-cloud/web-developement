@@ -1,0 +1,184 @@
+
+
+/* flex sizing
+  it sets the initial main size of alex item.
+
+
+  flex-direction: row|colmun
+  
+   for  row|colnum :
+   if flex item  size small and extra space left in the 
+   flex container we can adjust the 
+   
+   "flex item size (grow orshrink) individually "
+   
+   according to flex container in main axis
+   (horizontal|vertical) 
+
+
+
+So we used :
+
+  flexbasis:100px; (set "inital" flex size set of flex item(inner div))
+                    (main size:
+                      if flex-direction :row or colomun
+                        main size:width or height respectively )
+
+ */
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ #container
+{
+    height: 1000px;
+    width: 1000px;
+    background-color: azure;
+    margin: 20px auto;
+    border:2px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+
+/* 
+    flex-wrap:wrap; */
+
+    align-items:baseline;
+
+
+
+
+
+    align-content:baseline;
+
+
+
+
+
+}
+
+
+
+
+
+h1
+{
+
+    text-align: center;
+}
+
+
+#container div{
+
+    height: 400px;
+    width: 400px;
+    /* border-radius: 50%; */
+    color: white;
+    text-align: center;
+    font-size: 1.5  em; 
+}
+
+
+
+
+/* here we insteested in individual flex items(inner div)
+let see orange flex item */
+
+/* 
+#org
+{
+    
+align-self:flex-start;
+flex-basis: 300px;
+} */
+
+
+/* flex-basis apply main axis (horzontal 
+: "width" as flex-direction is row) */
+
+
+/* #blue
+{
+  flex-basis: 300px ;
+
+} */
+
+  /* flex-basis apply main axis (horzontal 
+:width as flex-direction is row) */
+
+
+
+
+
+
+
+
+
+
+
+
+/* flex-grow:
+it specifies how much of the flex container
+ remaining space should be assigned to the 
+ flex item's(for indiviual) main size(main axis  size it grow ) 
+
+ eg :
+ 
+ flex grow:1 (default)|2|3...any times we grow our flex items,
+ 
+ grow is unit less measurement ;
+
+ grow is main axis(for flexdirction:row ,main axis is horizontal (left to right)
+                   for flexdirction:colmun ,main axis is vertical (top to bottom))
+ 
+ 
+ */
+
+#org
+{
+    /* flex-grow:3;  */
+    flex-shrink:1.2;   
+    /*  shrink work only there is overflow */
+
+}
+/* grows wiil be in main axis cover all available exrta space it can find */
+
+#blue
+{
+/* flex-grow: 2; */
+/* max-width: 100px; */
+ /* min-width: 80px */
+flex-shrink: 2;
+
+}
+
+/* but we limit how much it can grow by max-width
+upto 100px only */
+
+/* we can get minimum width "atleast"  will be there
+  even slide window left to right
+  min-width: 200px*/
+
+
+/* like grow
+
+it can shrink flex items when items are "overflow"
+flex-shrink:1 it shrink at main axis
+
+"same as grow" */

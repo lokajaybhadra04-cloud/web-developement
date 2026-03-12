@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+}
+
+header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+
+div
+{
+     text-align:center;
+    color: #ffa511 ;
+    font-weight:900;
+    border:solid;
+    font-size: 55px;
+    letter-spacing: 2px;
+   
+    text-transform:uppercase;
+   
+    text-decoration:aqua underline double teal  ;
+    line-height:2.5 ; 
+    font-family:league spaartan;
+
+
+
+}

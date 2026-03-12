@@ -1,0 +1,35 @@
+/* we want "h1" tag heading should take 50% of "body" tag (parent of h1 tag)of html pahgr */
+
+h1{
+
+    border: 2px solid black;
+    width: 50%;
+}
+
+#outer
+{
+height: 400px;
+width: 400px;
+background-color: blue;
+margin: 50px;
+
+}
+
+/* we want margins inner div size with respect outer div 
+(50 % of parent of inner div size) */
+
+/* 40 % 400 px(outer div)=160 px
+margin =160 px of inner div. 160px(top,left,bottom,right) */
+
+#inner
+{
+    
+height: 100px;
+width: 100px;
+background-color: aqua;
+
+margin: 40%;
+
+}   
+
+/* As div is block element  right margin place will have large space as deafult */
