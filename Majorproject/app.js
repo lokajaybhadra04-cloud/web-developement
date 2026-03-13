@@ -124,8 +124,7 @@ app.get("/listing/:id/edit", async (req, res) => {
   } catch (err) {
     console.log("Error fetching listing for edit:", err);
     res.status(500).send("Error fetching listing for edit");
-  }
-});
+  }});
 
 
 
