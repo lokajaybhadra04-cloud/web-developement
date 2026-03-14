@@ -1,6 +1,12 @@
+require("dotenv").config({ quiet: true });
+
+
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
+
+const app = express();
+
+
 const Listing = require("./models/listing.js");
 
 //why path is require  because we need to specify the path for views and public folder
@@ -31,18 +37,28 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 
-require("dotenv").config({ override: true, quiet: true });
+
+
+
+
+
+
 
 async function main() {
   const MONGO_URI = process.env.MONGO_URI;
+
+  if (!MONGO_URI) {
+    console.log("MONGO_URI is not defined in .env file");
+    process.exit(1);
+  }
+
   await mongoose.connect(MONGO_URI);
   console.log("MongoDB Connected");
 }
 
 main().catch((err) => {
-  console.log("Connection Error:", err);
+  console.error("Connection Error:", err);
 });
-
 
 
 
