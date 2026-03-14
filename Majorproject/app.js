@@ -31,18 +31,17 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 
-// MongoDB Connection
+require("dotenv").config({ override: true, quiet: true });
+
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/WanderLust");
+  const MONGO_URI = process.env.MONGO_URI;
+  await mongoose.connect(MONGO_URI);
+  console.log("MongoDB Connected");
 }
 
-main()
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.log("MongoDB connection error:", err);
-  });
+main().catch((err) => {
+  console.log("Connection Error:", err);
+});
 
 
 
@@ -55,7 +54,8 @@ app.use("/listing", listingRoute);
 
 
 
-// Root Route
+
+// Root Route 
 app.get("/", (req, res) => {
   res.redirect("/listing");
 });
@@ -220,10 +220,9 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-
-
+const PORT = process.env.PORT || 8080;
 
 // Server
-app.listen(8080, () => {
-  console.log("Server running on port 8080");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

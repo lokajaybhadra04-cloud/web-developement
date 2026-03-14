@@ -21,3 +21,11 @@ router.post("/:id/edit", listingController.Update_route_post);
 router.post("/:id/delete", listingController.delete_route_post);
 
 module.exports = router;
+
+
+
+
+
+
+
+
