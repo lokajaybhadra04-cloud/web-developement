@@ -1,10 +1,11 @@
+require("dotenv").config({ path: "../.env" });
 const mongoose = require('mongoose');
 const initData = require("./data.js");
 const Listing=require("../models/listing.js");
 
 async function initDB() {
     try {
-        await mongoose.connect("mongodb://localhost:27017/WanderLust");
+        await mongoose.connect(process.env.MONGO_URI);
         console.log("Connected to MongoDB for seeding!");   
         await Listing.deleteMany({});
         console.log("Existing listings cleared!");   

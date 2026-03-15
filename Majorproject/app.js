@@ -44,21 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 
-async function main() {
-  const MONGO_URI = process.env.MONGO_URI;
 
-  if (!MONGO_URI) {
-    console.log("MONGO_URI is not defined in .env file");
-    process.exit(1);
-  }
-
-  await mongoose.connect(MONGO_URI);
-  console.log("MongoDB Connected");
-}
-
-main().catch((err) => {
-  console.error("Connection Error:", err);
-});
 
 
 
@@ -238,7 +224,35 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-// Server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
+
+
+
+async function main() {
+  const MONGO_URI = process.env.MONGO_URI;
+  
+
+  if (!MONGO_URI) {
+    console.log("MONGO_URI is not defined in .env file");
+    process.exit(1);
+  }
+
+  const connection = await mongoose.connect(MONGO_URI);
+  try
+  {
+    if (connection) 
+      {
+      console.log("Connected to MongoDB");
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+      });
+    }
+}
+  catch(err)
+  {
+    console.log("Error connecting to MongoDB:", err);
+    process.exit(1);
+  } 
+}
+
+main();

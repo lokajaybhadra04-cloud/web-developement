@@ -61,6 +61,19 @@
 
     </div>
 
+
+    <!-- to see createdAt and updatedAt -->
+    <p class="listing-timestamps">
+        <i class="fa-solid fa-clock detail-icon"></i>
+        <span class="detail-label">Created At:</span>
+        <%= listing.createdAt.toLocaleString("en-IN")%>
+        <br>
+        <span class="detail-label">Updated At:</span>
+        <%= listing.updatedAt.toLocaleString("en-IN") %>
+    </p>
+        
+
+
     <a href="/listing" class="back-link">Back to all listings</a>
 
 </div>

@@ -1,3 +1,4 @@
+
 const Listing = require("../models/listing");
 
 // INDEX ROUTE

@@ -43,8 +43,9 @@ const listingSchema = new mongoose.Schema({
     default: "City"
   }
 
-});
 
+}, { timestamps: true }// what it does is it adds createdAt and updatedAt fields to the schema);
+);
 const Listing = mongoose.model("Listing", listingSchema);
 
 module.exports = Listing;
