@@ -23,8 +23,19 @@ app.set("view engine", "ejs");
 //  for our views folder and __dirname is the current directory of the file
 //  and path.join is used to join the current directory with the views folder
 app.set("views", path.join(__dirname, "views"));
+
+
 //why app.engine is set to ejs-mate because we need to use the layout and partials in our views and ejs-mate is a layout engine for ejs
 app.engine("ejs", ejsMate);
+
+
+
+
+
+
+
+
+
 
 //  request==> Middleware===>response
 
@@ -222,7 +233,7 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5050;
 
 
 
