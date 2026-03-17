@@ -3,7 +3,7 @@
 
 <h1>Edit Listing</h1>
 
-<form action="/listing/<%= listing._id %>/edit" method="POST">
+<form action="/listing/<%= listing._id %>/edit" method="POST"class="needs-validation" novalidate>
 
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -15,6 +15,11 @@
             value="<%= listing.title %>" 
             required
         >
+
+     <div class="invalid-feedback">
+        title looks good!
+    </div>
+
     </div>
 
     <div class="mb-3">
@@ -26,6 +31,9 @@
             rows="3" 
             required
         ><%= listing.description %></textarea>
+          <div class="invalid-feedback">
+        Please enter short description of your listing.
+    </div>
     </div>
 
     <div class="mb-3">
@@ -37,6 +45,8 @@
             name="image" 
             value="<%= listing.image %>"
         >
+        
+
     </div>
 
     <div class="mb-3">
@@ -49,6 +59,10 @@
             value="<%= listing.price %>" 
             required
         >
+            <div class="invalid-feedback">
+                Please choose a price.
+            </div>
+
     </div>
 
     <div class="mb-3">
@@ -61,6 +75,10 @@
             value="<%= listing.location %>" 
             required
         >
+            <div class="invalid-feedback">
+                Please choose a proper location.
+            </div>
+
     </div>
 
     <div class="mb-3">
@@ -73,6 +91,9 @@
             value="<%= listing.country %>" 
             required
         >
+                <div class="invalid-feedback">
+                    Please give valid country name
+                </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Update Listing</button>

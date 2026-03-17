@@ -16,6 +16,7 @@
     name="title" 
     placeholder="Enter listing title"
     required>
+    <div class="valid-feedback">title looks good!</div>
 </div>
 
 <!-- Description -->
@@ -27,6 +28,9 @@
     rows="3" 
     placeholder="Describe your place"
     required></textarea>
+     <div class="invalid-feedback">
+        Please enter short description of your listing.
+    </div>
 </div>
 
 <!-- Price -->
@@ -38,6 +42,9 @@
     name="price" 
     placeholder="Enter price"
     required>
+    <div class="invalid-feedback">
+        Please choose a price.
+    </div>
 </div>
 
 <!-- Image URL -->
@@ -59,6 +66,10 @@
     name="country"
     placeholder="Enter country"
     required>
+     <div class="invalid-feedback">
+        Please give valid country name
+    </div>
+
 </div>
 
 <!-- Location -->
@@ -70,6 +81,9 @@
     name="location"
     placeholder="Enter city or place"
     required>
+     <div class="invalid-feedback">
+        Please choose a proper location.
+    </div>
 </div>
 
 <!-- Category -->
