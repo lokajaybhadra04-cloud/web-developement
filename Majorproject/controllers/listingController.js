@@ -1,5 +1,9 @@
 
 const Listing = require("../models/listing");
+const wrapAsync = require("../utils/wrapAsync.js");
+const ExpressError = require("../utils/ExpressError");
+
+
 
 // INDEX ROUTE
 module.exports.index = async (req, res) => {
@@ -36,57 +40,52 @@ module.exports.index = async (req, res) => {
 
 
 // EDIT PAGE
-module.exports.Updateroute = async (req, res) => {
+module.exports.Updateroute = wrapAsync(async (req, res) => 
+  {
   const { id } = req.params;
 
-  try {
+  
     const listing = await Listing.findById(id);
     if (!listing) return res.status(404).send("Listing not found");
 
     res.render("listings/edit", { listing });
 
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Error fetching listing");
-  }
-};
+  
+});
 
 
 // UPDATE POST
-module.exports.Update_route_post = async (req, res) => {
-  const { id } = req.params;
+module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
+   {
 
-  try {
-    const listing = await Listing.findByIdAndUpdate(
-      id,
-      req.body,
-      { returnDocument: "after" }
-    );
+     // console.log("Received data:", req.body);
+   if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
+     throw new ExpressError("Send valid for the listing", 400);
+  }   
+
+    
+    const { id } = req.params;
+
+
+    const listing = await Listing.findByIdAndUpdate(id, req.body,{ returnDocument: "after" } );
 
     if (!listing) return res.status(404).send("Listing not found");
 
     res.redirect("/listing/" + id);
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Error updating listing");
   }
-};
+
+  );
 
 
 // DELETE
-module.exports.delete_route_post = async (req, res) => {
+module.exports.delete_route_post =wrapAsync(async (req, res) => {
   const { id } = req.params;
 
-  try {
+
     await Listing.findByIdAndDelete(id);
     res.redirect("/listing");
 
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Error deleting listing");
-  }
-};
+});
 
 
 // NEW PAGE
@@ -96,33 +95,31 @@ module.exports.new_route = (req, res) => {
 
 
 // CREATE LISTING
-module.exports.new_route_post = async (req, res) => {
-  try {
+module.exports.new_route_post = wrapAsync(async (req, res) => { 
+  //to check if the data is being received correctly
+   // console.log("Received data:", req.body);
+   if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
+     throw new ExpressError("Send valid for the listing", 400);
+  }
+
     const newListing = new Listing(req.body);
     await newListing.save();
 
     res.redirect("/listing");
 
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Error creating listing");
-  }
-};
+  });
 
 
 // SHOW ROUTE
-module.exports.show_indivdual_listing = async (req, res) => {
+
+module.exports.show_indivdual_listing = wrapAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  try {
-    const listing = await Listing.findById(id);
+  const listing = await Listing.findById(id);
 
-    if (!listing) return res.status(404).send("Listing not found");
-
-    res.render("listings/show", { listing });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).send("Error fetching listing");
+  if (!listing) {
+    return next(new ExpressError("Listing Not Found", 404));
   }
-};
+
+  res.render("listings/show", { listing });
+});

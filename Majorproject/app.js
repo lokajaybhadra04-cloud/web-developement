@@ -81,9 +81,8 @@ app.get("/", (req, res) => {
 
 
 
-
-
 // // =========================
+
 // // INDEX ROUTE (Show all listings)
 // // =========================
 // app.get("/listing", async (req, res) => {
@@ -233,6 +232,85 @@ app.get("/", (req, res) => {
 //   }
 // });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// express error
+const ExpressError = require("./utils/ExpressError.js");
+app.use((req, res, next) => {
+  next(new ExpressError("Page Not Found", 404));
+});
+
+//* is used to match all the routes that are not defined and
+//  we are passing the error to the next middleware which is the error handling middleware and we are creating a new instance of ExpressError with the message "Page Not Found" and status code 404 and we are passing it to the next middleware using next() function.
+
+
+
+
+
+
+//error handling middleware for severside validation 
+app.use((err, req, res, next) => {
+  let { statusCode = 500, message = "Something went wrong" } = err;
+
+
+  res.status(statusCode).render("error", { err: { statusCode, message } });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const PORT = process.env.PORT || 5050;
 
 
@@ -248,9 +326,10 @@ async function main() {
     process.exit(1);
   }
 
-  const connection = await mongoose.connect(MONGO_URI);
+  
   try
   {
+    const connection = await mongoose.connect(MONGO_URI);
     if (connection) 
       {
       console.log("Connected to MongoDB");
