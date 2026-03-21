@@ -2,22 +2,23 @@ const express = require("express");
 const router = express.Router();
 
 const listingController = require("../controllers/listingController");
+const { validateListing } = require("../middleware");
 
-// INDEX ROUTE (Show all listings)
+// INDEX
 router.get("/", listingController.index);
 
-// Creater NEW LISTING
+// NEW
 router.get("/new", listingController.new_route);
-router.post("/new", listingController.new_route_post);
+router.post("/new", validateListing, listingController.new_route_post);
 
-// SHOW INDIVIDUAL LISTING
+// SHOW
 router.get("/:id", listingController.show_indivdual_listing);
 
-// EDIT `
+// EDIT
 router.get("/:id/edit", listingController.Updateroute);
-router.post("/:id/edit", listingController.Update_route_post);
+router.post("/:id/edit", validateListing, listingController.Update_route_post);
 
-// DELETE ROUTE
+// DELETE
 router.post("/:id/delete", listingController.delete_route_post);
 
 module.exports = router;

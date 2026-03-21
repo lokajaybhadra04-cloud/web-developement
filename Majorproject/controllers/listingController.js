@@ -2,6 +2,9 @@
 const Listing = require("../models/listing");
 const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError");
+const listingSchema = require('../schema');
+
+
 
 
 
@@ -59,9 +62,9 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
    {
 
      // console.log("Received data:", req.body);
-   if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
-     throw new ExpressError("Send valid for the listing", 400);
-  }   
+  //  if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
+  //    throw new ExpressError("Send valid for the listing", 400);
+  // }   
 
     
     const { id } = req.params;
@@ -69,6 +72,8 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
 
     const listing = await Listing.findByIdAndUpdate(id, req.body,{ returnDocument: "after" } );
 
+
+    
     if (!listing) return res.status(404).send("Listing not found");
 
     res.redirect("/listing/" + id);
@@ -98,9 +103,10 @@ module.exports.new_route = (req, res) => {
 module.exports.new_route_post = wrapAsync(async (req, res) => { 
   //to check if the data is being received correctly
    // console.log("Received data:", req.body);
-   if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
-     throw new ExpressError("Send valid for the listing", 400);
-  }
+  //  if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
+  //    throw new ExpressError("Send valid for the listing", 400);
+  // }
+     
 
     const newListing = new Listing(req.body);
     await newListing.save();
