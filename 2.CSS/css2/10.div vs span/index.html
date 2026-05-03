@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css2 descendent selector</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to NewtonBox!</h1>
+        </header>
+<div style="background-color: lightblue; padding: 20px;">
+  <h2>Section Title</h2>
+  <p>This entire block starts on a new line and spans the full width.</p>
+</div>
+<div style="background-color: lightgray; padding: 20px;">
+  <p>This is the next block, automatically pushed below the first one.</p>
+</div>
+
+
+<span style="background-color: lightblue; padding: 20px;">
+  <h2>Section Title</h2>
+  <p>This entire block starts on a new line and spans the full width.</p>
+</span>
+<span style="background-color: lightgray; padding: 20px;">
+  <p>This is the next block, automatically pushed below the first one.</p>
+</span>
+
+
+
+    </body>
+</html>
+
+
+
+
+
+
+<!-- 
+
+While the code in your second example will "technically" render in a browser, it contains invalid HTML and will cause layout issues.
+Here is why you should avoid the second approach:
+1. Structural Invalidity
+In HTML, you cannot put block-level elements (like <h2> or <p>) inside an inline element (like <span>).
+The Rule: Inline elements can only contain other inline elements or text.
+The Result: Browsers may try to "fix" this by automatically closing the <span> before the <h2> starts, which can break your intended CSS styling.
+2. Layout & Padding Issues
+The <div> example: The padding: 20px works perfectly because blocks respect vertical spacing.
+The <span> example: Inline elements handle padding differently. While the background color might appear, the padding will often overlap with lines above or below it rather than pushing them away. It won't create the clean "boxed" look you see with the <div>.
+3. Width Behavior
+The <div> blocks will stack on top of each other and span 100% width.
+The <span> blocks will try to sit side-by-side (if there is room) until the content inside them forces a break.
+In short: Always use <div> for containers and sections, and reserve <span> for small snippets of text or icons within a line.
+Would you like to see how to use CSS Flexbox to make those <div> blocks sit side-by-side instead?
+
+
+
+
+
+inline elements and block examples
+In HTML, elements are categorized based on how they sit in the "normal flow" of a webpage. Block-level elements always start on a new line and take up the full width available, while inline elements stay on the same line and only occupy as much width as their content needs. 
+W3Schools
+W3Schools
+ +2
+Block-Level Elements
+These elements stack vertically like bricks. They can contain other block-level elements or inline elements. 
+W3Schools
+W3Schools
+ +2
+<div>: A generic container used for grouping larger sections.
+<p>: Defines a paragraph; it automatically adds space before and after the text.
+<h1> to <h6>: Heading levels that define page structure.
+<ul> and <ol>: Unordered (bulleted) and ordered (numbered) lists.
+<li>: An individual item within a list.
+<section>: Used to define specific thematic sections in a document.
+<header> and <footer>: Containers for introductory content or bottom-of-page information.
+<form>: A container used to collect user input. 
+W3Schools
+W3Schools
+ +8
+Inline Elements
+These elements do not disrupt the flow of text and are typically found inside block-level elements. 
+Quora
+Quora
+ +1
+<span>: A generic inline container used to style specific parts of text.
+<a>: The anchor tag used to create hyperlinks.
+<img>: Embeds an image; notably, this is one of the few inline elements that can have a defined width and height.
+<strong>: Indicates that text is of strong importance, usually displayed in bold.
+<em>: Emphasizes text, usually displayed in italics.
+<br>: Produces a single line break within a paragraph.
+<button>: Creates a clickable button that stays on the same line as surrounding text.
+<code>: Used to display snippets of computer code. 
+
+Summary Table
+Feature 	Block-Level	                                             Inline
+New Line?	Always starts on a new line	                          Stays on the same line
+Width	Full width of parent                                    	Only as wide as content
+Nesting	Can contain block & inline                          	Only contains inline & text 
+
+Common Use	Page structure & layout	Styling & text formatting
+
+
+ -->

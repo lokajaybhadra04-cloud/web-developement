@@ -12,6 +12,9 @@ form
 
 /* "input" & "button" inherit the parent element property then*/
 
+
+
+
 button
 {
 
@@ -23,5 +26,3 @@ input
 
     background-color: inherit;
 }
-
-

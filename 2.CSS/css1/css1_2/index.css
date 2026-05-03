@@ -42,7 +42,7 @@ div
    
     text-transform:uppercase;
    
-    text-decoration:aqua underline double teal  ;
+    text-decoration:dashed underline teal 2px;
     line-height:2.5 ; 
     font-family:league spaartan;
 

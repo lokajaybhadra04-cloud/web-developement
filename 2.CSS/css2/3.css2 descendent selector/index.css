@@ -4,12 +4,12 @@ div p
 {
 
 color: aqua;
-background-color: beige;
+background-color: rgb(37, 37, 27);
 
 }
 span p
 {
 
     color: cornflowerblue;
-
+background-color: rgb(192, 192, 44);
 }

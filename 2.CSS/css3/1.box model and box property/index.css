@@ -30,18 +30,18 @@ h1{
    border-right:15px yellow  dashed ;
    /* border-radius: 15px; */
 
-   border-width: 50px;
+   border-width: 70px;
 
    /* if we want complete circle width and height of h1 tag/element
     need to be same than we can apply border-radius t0 50%  */
    
     border-radius: 50%;
     height: 150px;
-    width: 170px;
+    width: 150px;
 
 padding-top: 50px;
 padding-left: 20px;
- margin-left:330px;
+ margin-left:300px;
 
 
  /* set  the margin to zero of h1 tag
@@ -117,7 +117,7 @@ div
 {
   height: 150px;
   width: 500px;
-  background-color: aquamarine;
+  background-color: rgb(20, 76, 102);
   border-width: 5px;
   border-style: solid;
   border-color: rgb(27, 0, 0);
@@ -125,7 +125,7 @@ div
   border-radius: 10px;
   padding:10%;
   /* margin: 5px; */
-  margin-left:160px;
+  margin-left:100px;
   margin-right:20px;
   margin-top:30px;
   margin-bottom:5px;

@@ -47,3 +47,169 @@ div{
 BUT AS WE APPLY DIV AS DISPLAY: INLINE_BLOCK DIV WILL BEHAVE AS INLINE 
 ALL DIV WILL BE SAME LINE AND ALSO ALL PROPERTY LIKE HEIGHT AND WIDTH AND MARGINS
 PADDING AND  BORDER WILL BE WORKING HERE   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+
+🔥 1. Default Behavior of <div>
+✅ By default:
+div {
+  display: block;
+}
+👉 Meaning:
+Takes full width
+Each <div> starts on a new line
+✅ Example
+<div>A</div>
+<div>B</div>
+<div>C</div>
+Output:
+A
+B
+C
+
+
+🔴 2. When You Use display: inline
+div {
+  display: inline;
+}
+👉 What happens?
+All divs come in same line
+BUT layout control breaks
+❌ These properties DON’T behave properly:
+width ❌
+height ❌
+margin-top / bottom ❌
+✅ Only these work:
+margin-left / right ✔
+padding (partially) ✔
+⚠️ Your Comment Correction
+
+You wrote:
+
+“border or padding (except left and right(vertical border)) is not considered”
+
+👉 ❌ Incorrect wording
+
+✅ Correct:
+Border is always visible ✔
+Padding works ✔
+But top/bottom padding doesn’t affect layout properly
+
+
+
+
+🟢 3. Best Solution → inline-block
+div {
+  display: inline-block;
+}
+👉 What happens now?
+
+✔ Divs stay on same line
+✔ AND all properties work
+
+✅ These ALL work:
+width ✔
+height ✔
+margin ✔
+padding ✔
+border ✔
+🔥 Example
+<div>A</div>
+<div>B</div>
+<div>C</div>
+div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background: aqua;
+}
+Output:
+[A] [B] [C]
+
+✔ Same line
+✔ Proper spacing
+✔ Proper size
+
+
+
+
+⚠️ 4. Important Note (Inline-block spacing issue)
+
+Even with inline-block, you may see:
+
+[A]   [B]   [C]
+
+👉 Extra space comes from HTML whitespace
+
+✔ Fix:
+<div>A</div><div>B</div><div>C</div>
+
+OR use:
+
+font-size: 0;
+
+
+
+🔥 5. display: none (Your #fourth)
+#fourth {
+  display: none;
+}
+👉 Meaning:
+Element is completely removed
+Takes no space
+Not visible at all
+Example:
+<div>A</div>
+<div id="fourth">B</div>
+<div>C</div>
+Output:
+A C
+
+👉 “B” disappears completely
+
+⚠️ Important Comparison
+Property	Result
+display: none	Removed completely
+visibility: hidden	Hidden but space remains
+🧠 6. Clean Correct Notes (Final)
+🔹 Block (div)
+New line
+Full width
+All properties work
+🔹 Inline
+Same line
+width/height ❌
+margin-top/bottom ❌
+padding works but tricky
+🔹 Inline-block ⭐
+Same line ✔
+width/height ✔
+margin ✔
+padding ✔
+
+
+
+
+👉 Best for layout:
+💡 FINAL LINE (REMEMBER THIS)
+
+👉 inline-block = inline + block advantages */

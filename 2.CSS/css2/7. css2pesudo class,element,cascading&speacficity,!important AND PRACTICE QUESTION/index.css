@@ -100,3 +100,191 @@ h3{
 
     background-color: rgb(0, 8, 255);
 }
+
+
+
+
+/* 
+
+
+
+1. Basic Selector
+p {
+  color: aqua;
+}
+
+👉 Selects all <p> elements
+
+✔ Example:
+
+<p>Hello</p>  → aqua color
+
+
+🔹 2. ID Selector (#id)
+#login { ... }
+#signup { ... }
+
+👉 Targets specific elements:
+
+<button id="login">Log in</button>
+
+✔ Specificity:
+
+(1,0,0) → very strong
+
+
+
+
+🔹 3. Pseudo Classes
+✅ :hover
+button:hover {
+  background-color: rgb(14, 138, 246);
+}
+
+👉 When mouse comes over button
+
+✅ :active
+button:active {
+  background-color: rgb(43, 226, 86);
+}
+
+👉 When button is clicked
+
+✅ :checked + sibling selector
+input[type="radio"]:checked + label {
+  color: rgb(255, 0, 85);
+}
+
+👉 Meaning:
+
+Select label just after checked radio
+
+✔ Example:
+
+<input type="radio" checked>
+<label>Option</label>
+
+
+
+🔹 4. Attribute Selector
+input[type="radio"]
+input[id="yes"]
+
+👉 Select elements based on attributes
+
+✔ Example:
+
+<input type="radio">
+
+
+
+🔹 5. :enabled and :disabled
+input[id="yes"]:enabled + label {
+  color: green;
+}
+
+input[id="no"]:disabled + label {
+  color: red;
+}
+
+👉 Based on input state
+
+✔ Your HTML:
+
+<input id="no" disabled>
+
+
+
+🔹 6. Pseudo Elements
+✅ ::first-letter
+p[id=learn]::first-letter {
+  color: blue;
+}
+
+👉 First letter styled
+
+✅ ::first-line
+p[id=learn]::first-line {
+  color: red;
+}
+
+👉 First line styled
+
+✅ ::selection
+p[id=learn]::selection {
+  background-color: yellow;
+}
+
+👉 When you select text with mouse
+
+
+
+
+🔹 7. Combinators
+Adjacent sibling (+)
+input:checked + label
+
+👉 Select next element only
+
+
+
+🔹 8. nth-of-type (commented)
+h3:nth-of-type(2n+1)
+
+👉 Select:
+
+1st, 3rd, 5th h3
+
+✔ Pattern:
+
+2n+1 → odd
+2n → even
+
+
+
+🔹 9. Multiple CSS Rules (Cascading)
+h3 {
+  background-color: aqua;
+}
+h3 {
+  background-color: blue;
+}
+h3 {
+  background-color: greenyellow;
+}
+
+👉 All have SAME specificity:
+
+(0,0,1)
+
+✔ So:
+👉 Last one wins
+
+✅ Final result:
+
+background-color: greenyellow;
+
+
+
+🔥 10. Cascading Rule (VERY IMPORTANT)
+
+Priority order:
+
+1. !important
+2. Inline style
+3. ID
+4. Class / Attribute / Pseudo-class
+5. Element
+6. Last declared (if same specificity)
+🔹 11. Real Example from Your Page
+<h3>Question</h3>
+
+Applied styles:
+
+h3 { color: maroon }
+h3 { background-color: greenyellow }
+
+👉 Final:
+
+color → maroon
+background → greenyellow */

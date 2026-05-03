@@ -16,11 +16,24 @@ font-family: Georgia;
     background-color: cornflowerblue;
 }
 
+
+
+
+
+/* direct child of div is button */
+div > button  
+{
+    background-color: green;
+    color: azure;
+}
+
+/* get all desendent of div is button */
 div button
 {
     background-color: purple;
     color: azure;
 }
+
 
 
 button:hover
