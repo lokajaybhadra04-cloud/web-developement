@@ -123,3 +123,470 @@ place-self:end;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+🔥 1. BIG IDEA (VERY IMPORTANT)
+
+In CSS Grid, alignment works in 2 directions:
+
+Direction	Axis	Properties
+Horizontal	left ↔ right	justify-*
+Vertical	top ↕ bottom	align-*
+
+
+
+
+
+
+
+
+
+
+
+🔥 2. CONTAINER vs ITEM (CORE DIFFERENCE)
+🧠 Container properties (affect ALL items)
+justify-items
+align-items
+place-items
+🧠 Item properties (affect ONE item)
+justify-self
+align-self
+place-self
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 3. YOUR CODE (IMPORTANT PART)
+place-items: center;
+
+👉 This is shorthand for:
+
+justify-items: center;
+align-items: center;
+📊 What happens?
+
+Each grid cell has space → item moves to center
+
++-----------+
+|     ●     |
+|           |
++-----------+
+
+✔ Center horizontally
+✔ Center vertically
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 4. justify-items (HORIZONTAL CONTROL)
+justify-items: start | end | center | stretch;
+🧪 Example
+justify-items: start;
+|●        |
+|●        |
+justify-items: end;
+|        ●|
+|        ●|
+justify-items: center;
+|    ●    |
+|    ●    |
+
+
+
+
+
+
+
+
+
+
+
+🔥 5. align-items (VERTICAL CONTROL)
+align-items: start | end | center | stretch;
+🧪 Example
+align-items: start;
+|●|
+| |
+| |
+align-items: end;
+| |
+| |
+|●|
+align-items: center;
+| |
+|●|
+| |
+🔥 6. place-items (SHORTHAND)
+place-items: center;
+
+👉 SAME AS:
+
+justify-items: center;
+align-items: center;
+🎯 Shortcut Tip
+place-items: horizontal vertical;
+
+Example:
+
+place-items: start end;
+
+👉 horizontal = start
+👉 vertical = end
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 7. INDIVIDUAL ITEM CONTROL
+
+You wrote:
+
+place-self: end;
+🧠 Meaning:
+justify-self: end;
+align-self: end;
+
+👉 ONLY that one item moves
+
+📊 Visual
+
+Container:
+
+[  ●  ]  [  ●  ]
+[  ●  ]  [  ●  ]
+
+After:
+
+.item_one {
+  place-self: end;
+}
+[     ●]  [  ●  ]
+[  ●  ]   [  ●  ]
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 8. justify-self vs align-self
+Horizontal (left ↔ right)
+justify-self: start | end | center;
+Vertical (top ↕ bottom)
+align-self: start | end | center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 9. display: grid vs inline-grid
+
+You wrote this (good observation 👍):
+
+🧠 display: grid
+
+👉 Behaves like block element
+
+[ GRID CONTAINER ]
+(next content goes below)
+
+
+🧠 display: inline-grid
+
+👉 Behaves like inline element
+
+[ GRID ] text continues here →
+
+
+  9.1 Core Idea
+Property	Behavior
+display: grid	behaves like block element
+display: inline-grid	behaves like inline element
+
+👉 Grid layout inside is SAME
+👉 Only outer behavior changes
+
+
+
+9.2 What does “block vs inline” mean?
+✅ Block element
+Takes full width
+Always starts on new line
+[ GRID CONTAINER           ]
+Next content below
+✅ Inline element
+Takes only required width
+Stays in same line
+[ GRID ] text continues here →
+
+
+
+9.3 Example: display: grid
+HTML
+<div class="container">GRID</div>
+<p>Hello</p>
+CSS
+.container {
+  display: grid;
+  width: 200px;
+  height: 100px;
+  background: yellow;
+}
+🎯 Output
+[   GRID BOX   ]
+Hello
+
+👉 Even if space is available → Hello goes below
+
+
+
+
+9.4 Example: display: inline-grid
+CSS
+.container {
+  display: inline-grid;
+  width: 200px;
+  height: 100px;
+  background: yellow;
+}
+🎯 Output
+[ GRID BOX ] Hello
+
+👉 Now text stays beside the grid
+
+
+
+
+9.5 Real Visual Comparison
+display: grid
+|----------------------|
+|      GRID BOX        |
+|----------------------|
+Next line content
+display: inline-grid
+[ GRID BOX ] Next content continues →
+
+
+
+
+9.6 Important Note (VERY IMPORTANT)
+
+👉 Inside behavior is SAME:
+
+grid-template-columns
+grid-template-rows
+place-items
+
+✔ Works in both
+✔ Layout does NOT change
+
+
+
+
+9.7 Where to Use?
+✅ Use display: grid when:
+Full layout (page layout, sections)
+Want element on new line
+✅ Use display: inline-grid when:
+Small UI component (button, badge, icon group)
+Want it inline with text
+
+
+
+
+
+9.8 Practical Example
+Inline Badge
+<p>
+  Status: <span class="badge">ACTIVE</span>
+</p>
+.badge {
+  display: inline-grid;
+  place-items: center;
+  padding: 5px;
+  background: green;
+  color: white;
+}
+
+👉 Output:
+
+Status: [ ACTIVE ]
+
+✔ Clean inline layout
+
+
+
+
+9.9  Common Mistake
+
+👉 Students think:
+
+inline-grid = different grid system
+
+❌ Wrong
+
+👉 Truth:
+
+grid layout = SAME
+only outer display behavior changes
+
+
+
+🚀 Final Summary
+Feature	grid	inline-grid
+Takes full width	✅ Yes	❌ No
+Starts new line	✅ Yes	❌ No
+Works inside text	❌ No	✅ Yes
+Grid layout inside	✅ Same	✅ Same
+🎯 One-Line Memory Trick
+
+👉
+grid = block + grid
+inline-grid = inline + grid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 10. IMPORTANT DEFAULT (INTERVIEW LEVEL)
+justify-items: stretch;
+align-items: stretch;
+
+👉 Items stretch to fill the cell
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 11. FULL WORKING EXAMPLE
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+
+  place-items: center;
+}
+
+.item_one {
+  place-self: end;
+}
+🎯 Result
+Item	Position
+All items	Center
+.item_one	Bottom-right
+
+
+
+
+
+
+
+🔥 12. FINAL SUMMARY TABLE
+Property	Applies To	Axis	Purpose
+justify-items	container	horizontal	align all items
+align-items	container	vertical	align all items
+place-items	container	both	shorthand
+justify-self	item	horizontal	align one item
+align-self	item	vertical	align one item
+place-self	item	both	shorthand
+🚀 FINAL UNDERSTANDING
+
+👉 Grid = cell-based layout
+
+👉 Inside each cell:
+
+Horizontal → justify-*
+Vertical → align-*
+
+👉 Control:
+
+All items → *-items
+One item → *-self */

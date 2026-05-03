@@ -274,3 +274,290 @@ color: white;
 
     }  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+ 🔥 1. What are Media Queries?
+
+👉 Media Queries make a website responsive
+
+Responsive = website adjusts according to screen size/device
+
+DEVICE/enviroment :has property
+
+ 1. device-width
+ 2. device-height
+ 3. orientation->landscape,portrait (mode of device)
+ (most used are above three)
+ 4. hover
+ 5. forced_colors
+ 6. display-mode
+
+ etc.....
+
+
+
+👉 Example:
+
+Mobile 📱 → small layout
+Tablet 📱 → medium layout
+Desktop 💻 → large layout
+
+
+
+
+
+🧠 2. Basic Syntax
+@media (condition) {
+  /* CSS rules */
+/*}
+🎯 Example (Your idea)
+@media (width: 400px) {
+  div {
+    background-color: red;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+✅ Meaning:
+
+👉 ONLY when screen width = exactly 400px
+
+⚠️ Rarely used in real projects
+
+
+
+
+
+
+
+🔥 3. Most Important: min-width & max-width
+🔹 max-width (Mobile-first logic)
+@media (max-width: 599px) {
+  h1 {
+    background-color: crimson;
+  }
+}
+
+👉 Applies when:
+
+screen ≤ 599px
+
+👉 Used for mobile screens
+
+🔹 min-width (Desktop-first logic)
+@media (min-width: 600px) {
+  h1 {
+    background-color: green;
+  }
+}
+
+👉 Applies when:
+
+screen ≥ 600px
+
+
+
+
+
+
+🧠 4. Your Code Explained
+@media(max-width:599px)
+
+👉 Means:
+
+0px → 599px → styles applied
+Inside it:
+h1 {
+  background-color: rgb(205, 50, 58);
+  color: blueviolet;
+}
+
+👉 On small screens:
+
+Heading becomes red-ish
+Text becomes violet
+div {
+  background-color: rgb(16, 243, 47);
+}
+
+👉 Box becomes green on mobile
+
+
+
+
+
+
+
+
+
+🔥 5. Combining Conditions (VERY IMPORTANT)
+
+You wrote:
+
+@media(min-width:400px) and (max-width:800px)
+
+👉 Means:
+
+400px ≤ screen ≤ 800px
+🎯 Example
+@media (min-width: 400px) and (max-width: 800px) {
+  body {
+    background: lightblue;
+  }
+}
+
+👉 Works only for tablet size range
+
+
+
+
+🔥 6. Device / Environment Features
+
+You listed:
+
+✅ Common ones:
+🔹 1. width
+@media (max-width: 600px)
+🔹 2. orientation
+@media (orientation: landscape)
+
+👉 Device sideways
+
+@media (orientation: portrait)
+
+👉 Device vertical
+
+🔹 3. hover
+@media (hover: hover)
+
+👉 Device supports hover (desktop)
+
+🔹 4. display-mode
+
+Used in PWAs (advanced)
+
+
+
+
+
+
+🔥 7. Real-World Breakpoints (IMPORTANT)
+
+Most developers use:
+
+/* Mobile *//*
+@media (max-width: 600px)
+
+/* Tablet *//*
+@media (min-width: 601px) and (max-width: 1024px)
+
+/* Desktop *//*
+@media (min-width: 1025px)
+
+
+
+
+
+
+
+
+🚀 8. Mobile-First Best Practice
+
+👉 Write base CSS for mobile first:
+
+h1 {
+  font-size: 20px;
+}
+
+👉 Then enhance for bigger screens:
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+🔥 9. Full Example (Clean Version)
+h1 {
+  background-color: yellow;
+  border: 2px solid black;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+/* Mobile *//*
+@media (max-width: 599px) {
+  h1 {
+    background-color: crimson;
+    color: white;
+  }
+
+  div {
+    background-color: green;
+  }
+}
+
+/* Tablet *//*
+@media (min-width: 600px) and (max-width: 900px) {
+  h1 {
+    background-color: orange;
+  }
+}
+
+/* Desktop */ /*
+@media (min-width: 901px) {
+  h1 {
+    background-color: purple;
+  }
+}
+
+
+
+
+🎯 Final Summary
+
+You learned:
+
+✔ Media Queries = responsive design
+✔ @media syntax
+✔ min-width & max-width
+✔ combining conditions
+✔ device features (orientation, hover)
+✔ breakpoints */

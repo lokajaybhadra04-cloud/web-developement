@@ -29,7 +29,7 @@ h1
     /* border-radius: 50%; */
     color: white;
     text-align: center;
-    font-size: 1.5  em; 
+    font-size: 1.5em; 
 }
 
 
@@ -72,3 +72,222 @@ flex-wrap:wrap-reverse;   wrap it but revesrse format(ALONG CROSS AXIS FLEX ITEM
 
 
 */
+
+
+
+
+
+
+
+
+
+
+/* 🔥 1. display: flex (Foundation)
+
+.container {  display: flex;}
+✅ What happens:
+
+
+Parent → flex container
+
+
+Children → flex items
+
+
+Default layout:
+
+
+flex-direction: row;flex-wrap: nowrap;
+
+🧪 Before vs After
+❌ Normal (block)
+[1][2][3]
+✅ Flex
+[1] [2] [3]
+
+
+
+
+
+
+🔥 2. flex-direction (ALL VALUES)
+👉 Defines MAIN AXIS (flow direction)
+
+🟢 1. row (default)
+flex-direction: row;
+[1] [2] [3]
+
+
+Direction: left → right
+
+
+Main axis: horizontal
+
+
+
+🔵 2. row-reverse
+flex-direction: row-reverse;
+[3] [2] [1]
+
+
+Direction: right → left
+
+
+
+🟡 3. column
+flex-direction: column;
+[1][2][3]
+
+
+Direction: top → bottom
+
+
+Main axis: vertical
+
+
+
+🔴 4. column-reverse
+flex-direction: column-reverse;
+[3][2][1]
+
+
+Direction: bottom → top
+
+
+
+🧠 KEY RULE
+👉
+
+flex-direction decides MAIN AXIS
+
+
+
+
+
+
+
+
+🔥 3. justify-content (ALL VALUES)
+👉 Aligns items along MAIN AXIS
+
+🟢 1. flex-start (default)
+justify-content: flex-start;
+[1][2][3]        |
+👉 Start of main axis
+
+🔵 2. flex-end
+justify-content: flex-end;
+        [1][2][3]
+👉 End of main axis
+
+🟡 3. center
+justify-content: center;
+    [1][2][3]
+
+🟣 4. space-between
+justify-content: space-between;
+[1]      [2]      [3]
+
+🟠 5. space-around
+justify-content: space-around;
+  [1]   [2]   [3]
+👉 Equal space around items
+
+🔴 6. space-evenly
+justify-content: space-evenly;
+  [1]   [2]   [3]
+👉 Equal spacing everywhere
+
+⚠️ IMPORTANT
+👉 With row-reverse:
+flex-direction: row-reverse;justify-content: flex-start;
+👉 START = RIGHT SIDE
+
+
+
+
+
+
+
+
+🔥 4. flex-wrap (ALL VALUES)
+👉 Controls line breaking
+
+🟢 1. nowrap (default)
+flex-wrap: nowrap;
+👉 All items stay in one line
+❗ Items shrink if needed
+
+🔵 2. wrap
+flex-wrap: wrap;
+👉 Items move to next line
+
+🧪 Example:
+Row 1: [1][2][3]Row 2: [4][5]
+
+🔴 3. wrap-reverse
+flex-wrap: wrap-reverse;
+👉 Same as wrap BUT lines stack in reverse
+
+🧪 Example:
+Top Row:    [4][5]Bottom Row: [1][2][3]
+
+🧠 KEY RULE
+👉
+
+flex-wrap affects CROSS AXIS (not main axis)
+
+
+
+
+
+
+
+
+
+
+🔥 5. How Flex Items Behave
+
+✅ 1. They stay in one line (by default)
+flex-wrap: nowrap;
+
+✅ 2. They can shrink
+👉 If container small → items shrink
+
+✅ 3. They don’t take full width
+👉 Unlike normal block elements
+
+✅ 4. They align easily
+Using:
+justify-contentalign-items
+
+✅ 5. Width & Height
+👉 Not ignored ❌
+👉 But flexible ✔
+
+
+
+
+
+
+
+🔥 6. FULL EXAMPLE
+<div class="container">  <div>1</div>  <div>2</div>  <div>3</div>  <div>4</div></div>
+.container {  display: flex;  flex-direction: row;  justify-content: space-between;  flex-wrap: wrap;}.container div {  width: 150px;  height: 100px;}
+
+🧪 Output:
+Row 1: [1]     [2]     [3]Row 2: [4]
+ 
+
+
+
+
+
+
+🔥 FINAL SUMMARY TABLE
+Property	            Controls
+
+display:flex         	activate flexbox
+flex-direction	        main axis
+justify-content	        main axis alignment
+flex-wrap	            wrapping */

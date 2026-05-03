@@ -91,7 +91,7 @@ h1
     /* border-radius: 50%; */
     color: white;
     text-align: center;
-    font-size: 1.5  em; 
+    font-size: 1.5em; 
 }
 
 
@@ -182,3 +182,301 @@ it can shrink flex items when items are "overflow"
 flex-shrink:1 it shrink at main axis
 
 "same as grow" */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+🧠 1. What is Flex Sizing?
+
+👉 Flex sizing controls:
+
+How flex items grow, shrink, and take space inside container
+
+
+
+
+
+🔥 2. Main Axis (VERY IMPORTANT)
+
+Everything depends on this 👇
+
+flex-direction	Main Axis	Size Property
+row	horizontal	width
+column	vertical	height
+✅ Your Code
+flex-direction: column;
+
+👉 Main axis = vertical
+👉 So sizing affects height
+
+
+
+
+
+
+
+
+
+
+🔥 3. flex-basis (Initial Size)
+✅ Definition
+Initial size of flex item on main axis
+🧪 Example 1 (row)
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  flex-basis: 200px;
+}
+
+👉 Each item starts with 200px width
+
+🧪 Example 2 (column)
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  flex-basis: 200px;
+}
+
+👉 Each item starts with 200px height
+
+⚠️ Important Rule
+flex-basis overrides width/height
+
+
+
+
+
+
+
+
+🔥 4. flex-grow (Expand)
+✅ Definition
+Controls how much extra space item takes
+🧪 Example
+.item1 { flex-grow: 1; }
+.item2 { flex-grow: 2; }
+🎯 Meaning
+Extra space divided in ratio 1 : 2
+🧪 Visual
+
+Container = 600px
+Items = 200px + 200px = 400px
+Extra = 200px
+
+item1 → gets 66px
+item2 → gets 133px
+⚠️ Rule
+flex-grow works ONLY when extra space exists
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 5. flex-shrink (Reduce Size)
+✅ Definition
+Controls how items shrink when overflow happens
+🧪 Example
+.item1 { flex-shrink: 1; }
+.item2 { flex-shrink: 2; }
+🎯 Meaning
+item2 shrinks faster than item1
+🧪 Visual
+
+Container = 300px
+Items = 200 + 200 = 400px ❌ overflow
+
+👉 Need to shrink 100px
+
+item1 → shrinks less
+item2 → shrinks more
+⚠️ Rule
+flex-shrink works ONLY when overflow exists
+
+✔ Your note correct 👍
+
+
+
+
+
+
+
+🔥 6. Your Code Explanation
+Container
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+👉 Main axis = vertical
+
+Items
+#container div {
+  height: 400px;
+}
+
+👉 Each item wants 400px height
+
+Total Height Problem
+
+If 3 items:
+
+400 + 400 + 400 = 1200px
+
+But container = 1000px ❌ overflow
+
+Now shrink happens
+#org {
+  flex-shrink: 1.2;
+}
+
+#blue {
+  flex-shrink: 2;
+}
+🎯 Result
+#blue shrinks MORE
+#org shrinks LESS
+
+
+
+
+
+
+🔥 7. min-width / max-width
+🟢 max-width
+max-width: 100px;
+
+👉 Item cannot grow beyond 100px
+
+🔵 min-width
+min-width: 80px;
+
+👉 Item cannot shrink below 80px
+
+⚠️ Important
+These limit flex-grow and flex-shrink
+
+
+
+
+
+
+
+🔥 8. Combined Example (Real Use)
+.container {
+  display: flex;
+}
+
+.item {
+  flex-basis: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+Behavior
+
+✔ Starts at 200px
+✔ Expands if space available
+✔ Shrinks if needed
+
+
+
+
+
+
+
+🔥 9. Shorthand Property
+
+Instead of:
+
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 200px;
+
+👉 Use:
+
+flex: 1 1 200px;
+🔥 Common Shortcuts
+Shortcut	Meaning
+flex: 1	grow:1 shrink:1 basis:0
+flex: auto	grow:1 shrink:1 basis:auto
+flex: none	grow:0 shrink:0
+
+
+
+
+
+🔥 10. Types Summary
+1️⃣ flex-basis → Initial size
+2️⃣ flex-grow → Increase size
+3️⃣ flex-shrink → Decrease size
+
+🧠 FINAL MASTER FORMULA
+FINAL SIZE =
+flex-basis 
++ (grow effect if space)
+- (shrink effect if overflow)
+
+
+💡 MEMORY TRICK
+BASIS  → starting size  
+GROW   → expand  
+SHRINK → reduce  
+
+
+
+🚀 Pro Tip (Real World)
+
+👉 Most layouts use:
+
+flex: 1;
+
+👉 Equal distribution automatically */

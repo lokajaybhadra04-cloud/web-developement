@@ -34,3 +34,26 @@ background-color: greenyellow;
 
 
 
+  /* WHAT display: grid ACTUALLY DOES
+.container {
+  display: grid;
+}
+
+👉 This turns .container into a grid container
+👉 All .item become grid items
+
+⚠️ Important Reality
+
+Right now, you did NOT define rows/columns.
+
+👉 So browser uses auto grid (default)
+
+📊 Visual (YOUR CURRENT CODE)
+[1]
+[2]
+[3]
+[4]
+
+👉 Items stack vertically (like block elements)
+
+ */

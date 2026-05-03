@@ -74,5 +74,218 @@ h1
     /* border-radius: 50%; */
     color: white;
     text-align: center;
-    font-size: 1.5  em; 
+    font-size: 1.5em; 
 }
+
+
+
+
+
+
+
+
+
+/* 
+
+🔥 1. What is align-items?
+
+👉 It controls:
+
+Alignment of flex items along the CROSS AXIS
+
+🧠 First: Understand Axes
+
+You used:
+
+flex-direction: row;
+
+👉 So:
+
+Main axis   → horizontal (left → right)
+Cross axis  ↓ vertical (top → bottom)
+
+
+
+
+
+
+🔥 2. Your Container
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+👉 Means:
+
+Items arranged in a row
+Alignment controlled vertically
+
+
+
+
+
+
+🔥 3. All align-items Values
+🟢 1. flex-start
+align-items: flex-start;
+
+👉 Items align at top
+
+[1]  [2]  [3]
+
+(all start from top)
+
+🔵 2. flex-end
+align-items: flex-end;
+
+👉 Items align at bottom
+
+
+
+[1]  [2]  [3]
+
+(all pushed down)
+
+🟡 3. center
+align-items: center;
+
+👉 Items centered vertically
+
+   [1]  [2]  [3]
+🟣 4. stretch (default)
+align-items: stretch;
+
+👉 Items stretch to fill container height
+
+⚠️ Only works if height is NOT fixed
+
+🔴 5. baseline (your case)
+align-items: baseline;
+
+👉 Aligns items based on text baseline
+
+
+
+
+
+
+
+
+🔥 4. What is BASELINE?
+
+👉 Baseline = line where text sits
+
+Example:
+
+Small text:   hello
+Big text:     HELLO
+
+👉 Letters sit on same imaginary line → baseline
+
+
+
+
+
+
+
+🔥 5. Example of baseline
+🧪 HTML
+<div class="container">
+  <div style="font-size: 20px;">A</div>
+  <div style="font-size: 40px;">B</div>
+  <div style="font-size: 10px;">C</div>
+</div>
+🧪 CSS
+.container {
+  display: flex;
+  align-items: baseline;
+}
+🧪 Output
+ A
+ B
+ C
+
+👉 All letters align on same text line
+👉 Even if sizes are different
+
+
+
+
+
+
+🔥 6. Your Explanation (Corrected)
+❌ You wrote:
+
+"items start from top to bottom"
+
+👉 ❌ Wrong phrasing
+
+✅ Correct:
+align-items does NOT change direction
+It only aligns items on cross axis
+❌ You wrote:
+
+"flex center"
+
+👉 ❌ Wrong syntax
+
+✅ Correct:
+align-items: center;
+
+
+
+
+
+🔥 7. Your Code Behavior
+align-items: baseline;
+
+👉 So:
+
+All text inside boxes aligns on same baseline
+If one box has bigger font → others adjust
+🧪 Visual
+Box1: small text
+Box2: BIG TEXT
+Box3: medium
+
+→ All text sits on same line
+
+
+
+
+🔥 8. Important Detail
+
+👉 baseline works only when:
+
+Text exists inside elements
+Font sizes differ
+
+
+
+
+
+
+🔥 9. Compare Quickly
+Property	Axis	Purpose
+justify-content	main axis	horizontal (row)
+align-items	cross axis	vertical (row)
+
+
+
+
+🧠 FINAL UNDERSTANDING
+
+👉
+
+justify-content → controls spacing LEFT ↔ RIGHT
+align-items → controls alignment TOP ↕ BOTTOM
+
+
+💡 ONE-LINE MEMORY
+
+👉
+
+justify = main axis
+align = cross axis */

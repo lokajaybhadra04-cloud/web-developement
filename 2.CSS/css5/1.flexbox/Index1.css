@@ -61,3 +61,122 @@ h1
     font-size: 1.5  em; 
 
 }
+
+
+
+
+
+
+/* 
+
+🔥 1. Your Code (What it does)
+#container {
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+✅ Meaning:
+display: flex → makes this a flex container
+All child <div> → become flex items
+flex-direction: column → items arranged top → bottom
+
+
+
+
+
+
+
+🔥 2. Default Behavior (IMPORTANT)
+
+👉 If you only write:
+
+display: flex;
+
+Then by default:
+
+flex-direction: row;
+
+👉 Items go:
+
+[ div1 ][ div2 ][ div3 ]
+
+
+
+
+🔥 3. Your Comment Correction 🚨
+
+You wrote:
+
+“width and height are ignored”
+
+👉 ❌ Not correct
+
+✅ Correct:
+Width/height are respected
+BUT flexbox can:
+shrink items
+stretch items
+override sizes if needed
+🧪 Example
+#container {
+  display: flex;
+}
+
+#container div {
+  width: 500px;
+}
+
+👉 If container is smaller → items shrink automatically
+
+
+
+
+🔥 4. Your Child Div Code
+#container div {
+    height: 100px;
+    width: 500px;
+}
+👉 With flex-direction: column
+[ div1 ]
+[ div2 ]
+[ div3 ]
+
+✔ height = 100px
+✔ width = 500px
+
+👉 With flex-direction: row
+[ div1 ][ div2 ][ div3 ]
+
+👉 If space is less → items shrink
+
+
+
+
+
+🔥 5. AXIS CONCEPT (VERY IMPORTANT)
+🟢 Row
+flex-direction: row;
+Main axis → horizontal (→)
+Cross axis → vertical (↓)
+🔵 Column
+flex-direction: column;
+Main axis → vertical (↓)
+Cross axis → horizontal (→)
+🧠 Easy Trick
+
+👉
+
+Row → main axis = X
+Column → main axis = Y
+
+
+
+🔥 6. Flex Direction Types
+flex-direction: row;            /* left → right */
+/* flex-direction: row-reverse;    right → left */
+/*flex-direction: column;     */    /* top → bottom */
+/*flex-direction: column-reverse;*/ /* bottom → top */

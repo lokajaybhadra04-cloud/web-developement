@@ -23,7 +23,7 @@
   width: 100px;
   height: 100px;
   background: red;
-  transform: rotate(90deg) translate(200px,-200px);
+  transform: rotate(90deg) translate(120px,-100px);
 }
 
 
@@ -59,5 +59,5 @@
   width: 600px;
   height: 800px;
   background-image:url("https://i.postimg.cc/ZYQFXfDz/4e2da033-3926-4497-9cfd-5894a923f56a.jpg");
-  opacity: 50%;
+  opacity: 100%;
 }

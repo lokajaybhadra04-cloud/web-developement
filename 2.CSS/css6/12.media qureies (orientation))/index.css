@@ -88,3 +88,222 @@ div{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+ 🔥 1. What is orientation in Media Queries?
+
+👉 It checks how the device is held
+
+portrait  → vertical (mobile normal)
+landscape → horizontal (rotated / laptop)
+🧠 Syntax
+@media (orientation: landscape) {
+  /* styles *//*
+}
+✅ Your Code (Clean Version)
+@media (orientation: landscape) {
+
+  h1 {
+    background-color: aquamarine;
+    color: brown;
+  }
+
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: darkred;
+    color: navy;
+  }
+
+}
+🔍 What Your Code Does
+
+👉 When screen is horizontal (landscape):
+
+🔹 h1
+background → aquamarine
+text → brown
+🔹 div
+size → 100×100
+background → dark red
+text → navy
+📱 Real Device Behavior
+📱 Mobile
+Portrait (normal)
+|
+|
+|
+
+👉 Your media query ❌ NOT applied
+
+Landscape (rotated)
+-------
+
+👉 Your media query ✅ APPLIED
+
+
+
+
+
+
+
+
+
+
+
+🔥 2. Why orientation is Useful
+✅ Use cases:
+📺 Video players (full screen landscape)
+🎮 Games
+📊 Dashboards
+📱 Mobile UI adjustments
+🎯 Example (Real Use)
+@media (orientation: landscape) {
+  body {
+    background: black;
+  }
+}
+
+👉 Perfect for:
+
+Watching videos in dark mode
+
+
+
+
+
+
+
+🔥 3. Combine Orientation + Width (POWERFUL)
+
+👉 Real-world usage:
+
+@media (max-width: 600px) and (orientation: landscape) {
+  body {
+    background: lightblue;
+  }
+}
+👉 Meaning:
+Small screen + horizontal mode
+🎯 Example Use Case
+@media (orientation: portrait) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+👉 Text becomes bigger in landscape
+
+
+
+
+
+
+
+
+
+🚀 4. Pro Tip (VERY IMPORTANT)
+
+👉 Don’t rely only on orientation
+
+❌ Bad:
+
+@media (orientation: landscape)
+
+✅ Better:
+
+@media (min-width: 768px) and (orientation: landscape)
+
+👉 Why?
+
+Tablets + desktops behave differently
+Orientation alone is not enough
+
+
+
+
+
+
+
+🔥 5. Visual Flow
+Check device →
+   Is it landscape? →
+      YES → apply styles
+      NO  → ignore
+
+
+
+
+💡 Final Summary
+
+You used:
+
+✔ @media
+✔ orientation feature
+✔ conditional styling
+✔ responsive behavior */
+
+
+
+
+
+
+
+
+
+
+
+/* 
+how to check orientaion in chrome in laptop
+
+
+
+🔥  Using Chrome DevTools (Best Way):
+
+Open your website in Chrome
+Press:
+Ctrl + Shift + I
+
+👉 Opens DevTools
+
+Click this icon (Toggle Device Toolbar):
+📱 (mobile/tablet icon)
+
+Shortcut:
+
+Ctrl + Shift + M
+
+
+
+
+
+🔄 Now Change Orientation
+
+👉 At the top bar you’ll see device controls
+
+Click rotate icon: 
+↻
+Portrait → vertical
+Landscape → horizontal 
+
+
+*/

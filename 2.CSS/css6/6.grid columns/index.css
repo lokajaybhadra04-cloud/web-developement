@@ -78,3 +78,250 @@ grid-column: 1/span 2;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+🔥 1. What is grid-column?
+
+👉 It controls how many columns an item occupies
+👉 Works only in horizontal direction (columns)
+
+
+
+
+
+
+🧠 2. GRID LINE SYSTEM (MOST IMPORTANT)
+
+When you write:
+
+grid-template-columns: repeat(3, 1fr);
+
+👉 You get 3 columns BUT 4 vertical lines
+
+Line1   Line2   Line3   Line4
+ |  1  |  2  |  3  |
+
+✔ Columns = 3
+✔ Lines = 4
+
+👉 Grid positioning ALWAYS uses LINES, not columns
+
+
+
+
+
+
+
+
+
+🔥 3. Your Property
+grid-column: 1 / span 2;
+🧠 What it means:
+
+👉 Start at line 1
+👉 Span across 2 columns
+
+📊 Visual
+Line1   Line2   Line3   Line4
+ |------ item ------|
+ |   col1   col2   |
+
+✔ Starts at line 1
+✔ Covers 2 columns
+✔ Ends at line 3
+
+
+
+
+
+🔥 4. SAME THING (DIFFERENT WAYS)
+✅ Method 1 (your way)
+grid-column: 1 / span 2;
+✅ Method 2
+grid-column: 1 / 3;
+
+👉 Because:
+
+end line = start line + span
+= 1 + 2 = 3
+
+
+
+
+
+🔥 5. LONGHAND VERSION
+grid-column-start: 1;
+grid-column-end: 3;
+
+
+
+
+
+
+
+🔥 6. MORE EXAMPLES
+🧪 Example 1
+grid-column: 2 / 4;
+
+📊 Result:
+
+Line1   Line2   Line3   Line4
+        |------ item ------|
+           col2   col3
+
+✔ Starts at column 2
+✔ Ends at column 3
+
+🧪 Example 2
+grid-column: 1 / span 3;
+
+📊 Result:
+
+Line1   Line2   Line3   Line4
+ |--------- item --------|
+     col1 col2 col3
+
+✔ Takes full width
+
+🧪 Example 3 (single column)
+grid-column: 2 / 3;
+
+📊 Result:
+
+Line1   Line2   Line3   Line4
+        | item |
+         col2
+
+
+
+
+
+
+
+
+
+
+
+🔥 7. COMMON CONFUSION (IMPORTANT ❗)
+
+You wrote:
+
+end col = span number + 1
+
+👉 ❌ Not exactly
+
+✅ Correct:
+
+end line = start line + span
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 8. FULL WORKING EXAMPLE
+<div class="container">
+  <div class="item item_one">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.item_one {
+  grid-column: 1 / span 2;
+}
+🎯 Output:
+[   1   ][   1   ][ 2 ]
+[   3   ][       ][   ]
+
+✔ Item 1 takes 2 columns
+✔ Others auto-place
+
+
+
+
+
+
+
+
+🔥 9. PRO TIP (EXAM + INTERVIEW)
+
+👉 Always remember:
+
+Grid = Lines, NOT columns
+
+👉 span = how many columns to cover
+👉 / = start line → end line
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 10. BONUS (SHORTCUT MASTERY)
+grid-column: span 2;
+
+👉 Means:
+
+✔ Start automatically
+✔ Take 2 columns
+
+
+
+
+
+🚀 FINAL SUMMARY
+Property	Meaning
+grid-column-start	starting line
+grid-column-end	ending line
+grid-column: 1/3	from line 1 to 3
+grid-column: 1/span 2	start at 1, take 2 columns
+span	number of columns to cover */

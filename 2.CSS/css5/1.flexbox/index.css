@@ -80,3 +80,118 @@ block,inline ,inline-block,now "flex"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+ 🔥 1. What is Flexbox?
+
+👉 Flexbox = 1D layout system
+
+✔ Arranges items in:
+
+Row (horizontal)
+Column (vertical)
+
+
+🔥 2. Flex Container & Flex Items
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+.container {
+  display: flex;
+}
+✅ Meaning:
+.container → flex container
+inner <div> → flex items
+
+
+
+🔥 3. Default Behavior
+display: flex;
+
+👉 Default:
+
+flex-direction: row;
+🧪 Output:
+[1] [2] [3]
+
+
+
+
+🔥 4. Flex Direction (Very Important)
+🟢 Row
+flex-direction: row;
+
+👉 Items go: left → right
+👉 Main axis = horizontal
+👉 Cross axis = vertical
+
+🔵 Column
+flex-direction: column;
+
+👉 Items go: top → bottom
+👉 Main axis = vertical
+👉 Cross axis = horizontal
+
+
+
+🧠 Your Statement Fix
+
+You wrote:
+
+"column is cross axis"
+
+👉 ❌ Wrong
+
+✅ Correct:
+
+👉 flex-direction always defines the MAIN AXIS, not cross axis
+
+
+
+
+
+
+
+
+
+🔥 5. All Directions
+flex-direction: row;            /* left → right */
+/*flex-direction: row-reverse;    /* right → left */
+/*flex-direction: column;         /* top → bottom */
+/*flex-direction: column-reverse; /* bottom → top */
+
+
+
+
+
+/* 
+
+🔥 6. Main Axis vs Cross Axis
+
+👉 Depends on direction:
+
+If row:
+Main axis → horizontal →
+Cross axis ↓ vertical
+
+If column:
+Main axis ↓ vertical
+Cross axis → horizontal  */

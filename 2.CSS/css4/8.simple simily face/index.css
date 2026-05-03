@@ -52,12 +52,12 @@ border: 1px solid black;
 
 width: 100px;
 height: 35px;
-margin: 60px -30px 40px 75px ;
+margin: 60px 0px 40px 75px ;
 background-color: rgb(255, 8, 41);
 border: 1px solid black;
 border-bottom-left-radius:30px;
 border-bottom-right-radius: 30px;
-position: fixed;
+position: absolute;
 top: 180px;
 left:70px;
 

@@ -80,3 +80,249 @@ grid-row: 1/span 2;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+🔥 1. What is grid-row?
+
+👉 grid-row controls how an item is placed vertically (top → bottom)
+👉 It uses ROW LINES (horizontal lines)
+
+
+
+
+🧠 2. ROW LINE SYSTEM (VERY IMPORTANT)
+
+You wrote:
+
+grid-template-rows: repeat(5, 1fr);
+
+👉 This creates:
+
+✔ 5 rows
+✔ BUT 6 horizontal lines
+
+📊 Visual
+Line1  ─────────
+Row1
+Line2  ─────────
+Row2
+Line3  ─────────
+Row3
+Line4  ─────────
+Row4
+Line5  ─────────
+Row5
+Line6  ─────────
+
+👉 Always remember:
+
+✔ Rows = 5
+✔ Lines = Rows + 1 = 6
+
+
+
+
+
+
+
+🔥 3. Your Property
+grid-row: 1 / span 2;
+🧠 Meaning:
+
+👉 Start at row line 1
+👉 Span across 2 rows
+
+📊 Visual
+Line1 ─────────
+|    item     |
+|             |  ← covers Row1 + Row2
+Line2 ─────────
+|             |
+Line3 ─────────
+
+✔ Starts at line 1
+✔ Covers 2 rows
+✔ Ends at line 3
+
+
+
+
+
+
+
+
+🔥 4. SAME THING (DIFFERENT WAYS)
+✅ Method 1 (your way)
+grid-row: 1 / span 2;
+✅ Method 2
+grid-row: 1 / 3;
+
+👉 Because:
+
+end line = start line + span
+= 1 + 2 = 3
+
+
+
+
+
+
+🔥 5. LONGHAND VERSION
+grid-row-start: 1;
+grid-row-end: 3;
+
+
+
+
+
+
+🔥 6. MORE EXAMPLES
+🧪 Example 1
+grid-row: 2 / 4;
+
+📊 Result:
+
+Line1
+Row1
+
+Line2
+| item |
+|      | ← covers Row2 + Row3
+
+Line3
+
+Line4
+🧪 Example 2
+grid-row: 1 / span 3;
+
+📊 Result:
+
+Covers Row1 + Row2 + Row3
+🧪 Example 3 (single row)
+grid-row: 3 / 4;
+
+👉 Only Row3
+
+
+
+
+
+
+
+
+🔥 7. COMMON MISTAKE (FIXED ❗)
+
+You wrote:
+
+end row = span number + 1
+
+👉 ❌ Not correct
+
+✅ Correct formula:
+
+end line = start line + span
+
+
+
+
+🔥 8. FULL WORKING EXAMPLE
+HTML
+<div class="container">
+  <div class="item item_one">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+CSS
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.item_one {
+  grid-row: 1 / span 2;
+}
+🎯 Output (Conceptually)
+[ 1 ][ 2 ][ 3 ]
+[ 1 ][   ][   ]
+[   ][   ][   ]
+
+✔ Item 1 takes 2 rows vertically
+✔ Other items auto-place
+
+
+
+
+
+
+
+🔥 9. COMBINE ROW + COLUMN (VERY POWERFUL 🔥)
+.item_one {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+📊 Result:
+
+[ 1 ][ 1 ][ 2 ]
+[ 1 ][ 1 ][ 3 ]
+
+👉 Now item becomes a big rectangle
+
+
+
+
+
+
+
+🔥 10. QUICK SUMMARY
+Property	Meaning
+grid-row-start	starting row line
+grid-row-end	ending row line
+grid-row: 1/3	from row line 1 → 3
+grid-row: 1/span 2	start at 1, take 2 rows
+span	number of rows to cover
+
+
+
+
+🚀 FINAL UNDERSTANDING
+
+👉 Grid always works with LINES, not rows
+
+👉 grid-column → horizontal control
+👉 grid-row → vertical control
+
+👉 Combine both → full layout control 🔥 */

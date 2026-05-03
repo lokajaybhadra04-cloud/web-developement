@@ -224,3 +224,308 @@ animation: diminsion_animation 2s ease-in 0.2s infinite alternate-reverse; */
 animation: NEW_animation 2s ease-in 0.2s infinite alternate-reverse; 
 
  }
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+ ✅ What is Animation?
+
+👉 Animation means changing an element from one state → another state over time.
+
+Example:
+
+Small → Big
+Red → Yellow
+Square → Circle
+
+
+
+🧠 1. @keyframes (Animation Blueprint)
+
+This defines what will change
+
+@keyframes animation_name {
+  from {
+    /* initial state */
+ /* }
+
+  to {
+    /* final state */
+ /* }
+}
+✔ Example:
+@keyframes font_animation {
+  from {
+    font-size: 20px;
+  }
+  to {
+    font-size: 40px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🧠 2. Applying Animation to Element
+
+👉 Animation works ONLY when applied to an element
+
+.box {
+  animation-name: font_animation;
+  animation-duration: 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+⚙️ 3. Important Animation Properties
+🔹 1. animation-name
+
+Name of keyframes
+
+animation-name: font_animation;
+🔹 2. animation-duration
+
+Time for one cycle
+
+animation-duration: 2s;
+🔹 3. animation-timing-function
+
+Speed curve
+
+animation-timing-function: ease-in;
+
+👉 Types:
+
+linear → constant speed
+ease-in → slow start
+ease-out → slow end
+ease-in-out → smooth
+steps(n) → step-by-step
+🔹 4. animation-delay
+
+Delay before starting
+
+animation-delay: 0.2s;
+🔹 5. animation-iteration-count
+
+How many times
+
+animation-iteration-count: infinite;
+🔹 6. animation-direction
+animation-direction: alternate;
+
+👉 Values:
+
+normal
+reverse
+alternate
+alternate-reverse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+⚡ 4. Shorthand (You made a small mistake here)
+
+❌ Your version (wrong syntax):
+
+animation: animation_name: dimision_animation ...
+
+✅ Correct shorthand:
+
+animation: name duration timing-function delay iteration direction;
+
+✔ Example:
+
+animation: diminsion_animation 2s ease-in 0.2s infinite alternate;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 5. Your Combined Animation (Fixed + Improved)
+
+Your code is good, just slightly refined:
+
+@keyframes new_animation {
+  from {
+    margin: 0px;
+    width: 100px;
+    height: 300px;
+    font-size: 20px;
+    background-color: crimson;
+  }
+
+  to {
+    margin: 150px;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    font-size: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+}
+
+.box {
+  height: 100px;
+  width: 300px;
+  background-color: pink;
+  text-align: center;
+  color: yellowgreen;
+
+  animation: new_animation 2s ease-in 0.2s infinite alternate-reverse;
+}
+
+
+
+
+
+🚀 Important Improvements / Notes
+
+⚠️ 1. Spelling Fixes
+diminsion ❌ → dimension ✅
+aniamtion ❌ → animation ✅
+
+⚠️ 2. You can use percentages (more control)
+@keyframes smooth_animation {
+  0% { background: red; }
+  50% { background: blue; }
+  100% { background: green; }
+}
+
+👉 This is better than just from → to
+
+
+
+⚠️ 3. Not all properties animate well
+
+Good ones:
+
+width, height
+color
+background
+transform (best)
+
+Bad ones:
+
+display (❌ not animatable)
+
+
+🎯 BEST PRACTICE (IMPORTANT)
+
+Use transform instead of width/height for smoother animation:
+
+@keyframes better {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+👉 More performant (used in real-world projects)
+
+🧪 Mini Example (Perfect Demo)
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+
+  animation: move 2s infinite alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+
+💡 Final Summary
+
+👉 Animation = @keyframes + animation properties */

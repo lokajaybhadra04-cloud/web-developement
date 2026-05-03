@@ -67,6 +67,239 @@ h1
     border-radius: 50%;
     color: white;
     text-align: center;
-    font-size: 1.5  em; 
+    font-size: 1.5em; 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+🔥 1. What justify-content REALLY does
+
+👉 It controls:
+
+How extra space is distributed along the MAIN AXIS
+
+🧠 First understand MAIN AXIS
+flex-direction: row;
+
+👉 Main axis = horizontal (left → right)
+
+flex-direction: column;
+
+👉 Main axis = vertical (top → bottom)
+
+
+
+
+
+
+🔥 2. Your Container
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+👉 So:
+
+Main axis = horizontal
+Items arranged left → right
+Spacing applied horizontally
+
+
+
+
+
+
+
+🔥 3. All justify-content Values (with visuals)
+🟢 1. flex-start (default)
+justify-content: flex-start;
+
+👉 Items start from beginning
+
+[1][2][3]        |
+🔵 2. flex-end
+justify-content: flex-end;
+
+👉 Items move to end
+
+        [1][2][3]
+
+🟡 3. center
+justify-content: center;
+
+👉 Items go to center
+
+    [1][2][3]
+🟣 4. space-between
+justify-content: space-between;
+
+👉 Space only between items
+
+[1]      [2]      [3]
+
+✔ NO space at edges
+❗ First item touches left, last touches right
+
+🟠 5. space-around
+justify-content: space-around;
+
+👉 Equal space around items
+👉 BUT edge space = half
+
+  [1]   [2]   [3]
+
+✔ Edges have less space
+
+🔴 6. space-evenly
+justify-content: space-evenly;
+
+👉 Equal space everywhere
+
+   [1]   [2]   [3]
+
+✔ Edges = same as gaps
+
+
+
+
+
+
+
+
+🔥 4. Your Statements (Corrections)
+❌ You wrote:
+
+“center (right to left)”
+
+👉 ❌ Wrong
+
+✅ Correct:
+center = always center of main axis
+Direction doesn’t matter
+❌ You wrote:
+
+“flex-end means right to left”
+
+👉 ❌ Not always
+
+✅ Correct:
+flex-end = end of main axis
+Depends on flex-direction
+
+
+
+
+
+
+
+
+
+🔥 5. Important Concept (Direction Effect)
+If:
+flex-direction: row;
+
+👉
+
+start = left
+end = right
+If:
+flex-direction: row-reverse;
+
+👉
+
+start = right
+end = left
+
+
+
+
+
+
+
+
+
+
+🔥 6. Your Example Explained
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+🧪 Output:
+   [1]   [2]   [3]
+
+👉 Equal space around each circle
+👉 Edges have half spacing
+
+
+
+
+
+🔥 7. Your Item Styling
+#container div {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+✅ Meaning:
+Each item = circle
+Flexbox arranges them in a row
+Spacing controlled by justify-content
+
+
+
+
+
+
+
+
+
+
+
+🔥 8. Real-Life Example
+
+👉 Navbar spacing:
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+LOGO          MENU
+
+
+
+
+
+🧠 FINAL SUMMARY
+Value          	      Behavior
+flex-start	          start
+flex-end	          end
+center	              center
+space-between	      gaps only between
+space-around	      equal around (half edges)
+space-evenly	      equal everywhere
+
+
+
+💡 MASTER MEMORY
+
+👉
+
+justify-content = “how space is distributed on main axis” */

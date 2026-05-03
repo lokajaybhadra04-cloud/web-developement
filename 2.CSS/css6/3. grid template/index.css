@@ -49,3 +49,271 @@ text-align: center;
 
 /* as we comment out width and height of items it will try fill
 individually occpied the grid cells */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+🔥 1. WHAT THEY DEFINE (BIG IDEA)
+grid-template-columns → structure of columns (width)
+grid-template-rows    → structure of rows (height)
+
+👉 Together they create the grid layout skeleton
+
+
+
+
+🔥 2. BASIC STRUCTURE EXAMPLE
+.container {
+  display: grid;
+
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 50px 100px;
+}
+📊 Visual
+        100px        200px
+     +---------+-------------+
+50px |    1    |      2      |
+     +---------+-------------+
+100px|    3    |      4      |
+     +---------+-------------+
+
+👉 2 columns + 2 rows = 4 cells
+
+
+
+
+
+🔥 3. HOW THE VALUES WORK
+✅ Multiple values = multiple tracks
+grid-template-columns: 100px 100px 100px;
+
+👉 Means:
+
+|100px|100px|100px|
+
+✔ 3 columns
+
+✅ Same for rows
+grid-template-rows: 50px 50px 50px;
+
+✔ 3 rows
+
+
+
+
+
+
+
+
+🔥 4. DIFFERENT UNITS (VERY IMPORTANT)
+🟢 1. Fixed (px)
+grid-template-columns: 100px 200px;
+
+✔ Fixed size
+❌ Not responsive
+
+🟢 2. Flexible (fr)
+grid-template-columns: 1fr 2fr 1fr;
+📊 Visual
+|----1fr----|------2fr------|----1fr----|
+
+👉 Total = 4 parts
+👉 Middle is bigger
+
+✔ Best for responsive design
+
+🟢 3. auto
+grid-template-columns: auto auto;
+
+👉 Size depends on content
+
+📊 Visual
+|--content--|------content------|
+
+❗ Not always equal
+
+
+
+
+
+
+
+
+
+
+🔥 5. MIXING VALUES (REAL WORLD)
+grid-template-columns: 100px 1fr auto;
+📊 Visual
+|100px|------remaining space------|content|
+
+
+
+
+
+
+
+
+
+
+🔥 6. repeat() FUNCTION (PRO LEVEL)
+
+Instead of writing:
+
+grid-template-columns: 1fr 1fr 1fr;
+✅ Use:
+grid-template-columns: repeat(3, 1fr);
+
+✔ Cleaner
+✔ Professional
+
+
+
+
+
+
+
+
+🔥 7. COMPLETE WORKING EXAMPLE
+.container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px;
+
+  gap: 10px;
+}
+📊 Visual
++-------+-------+-------+
+|   1   |   2   |   3   |
++-------+-------+-------+
+|   4   |   5   |   6   |
++-------+-------+-------+
+
+
+
+
+
+
+
+
+🔥 8. HOW ITEMS GET PLACED
+
+👉 Automatically:
+
+Left → Right → Next Row
+
+
+
+
+
+
+
+
+🔥 9. KEY CONCEPTS (VERY IMPORTANT)
+🧠 1. Grid Lines
+| line1 | col1 | line2 | col2 | line3 |
+
+👉 Used for positioning
+
+🧠 2. Grid Tracks
+
+👉 Space between lines
+
+column track = width
+row track    = height
+🧠 3. Grid Cells
+
+👉 One box area
+
++-----+
+|cell |
++-----+
+
+
+
+
+
+
+
+🔥 10. COMMON MISTAKES
+
+❌ Thinking:
+
+auto = equal size
+
+👉 Wrong
+
+✔ Correct:
+
+auto = content-based
+fr = equal/flexible
+
+❌ Forgetting rows
+
+👉 If you don’t define rows:
+
+grid-template-columns: 3 columns;
+
+👉 Rows are created automatically
+
+
+
+
+
+
+
+
+🔥 11. REAL WEBSITE EXAMPLE
+.container {
+  display: grid;
+
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr 50px;
+
+  gap: 10px;
+}
+📊 Layout
++-----------------------+
+|        HEADER         |
++---------+-------------+
+| SIDEBAR |   CONTENT   |
++---------+-------------+
+|        FOOTER         |
++-----------------------+
+
+
+
+
+
+🔥 12. FINAL SUMMARY
+grid-template-columns → define width of columns
+grid-template-rows    → define height of rows
+
+Values:
+px  → fixed
+fr  → flexible (best)
+auto → content-based
+
+repeat() → cleaner code */

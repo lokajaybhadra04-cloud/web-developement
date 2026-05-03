@@ -119,5 +119,405 @@ h1
     /* border-radius: 50%; */
     color: white;
     text-align: center;
-    font-size: 1.5  em; 
+    font-size: 1.5em; 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔥 1. What is align-content?
+
+👉 It controls:
+
+How multiple rows (flex lines) are spaced along the CROSS AXIS
+
+⚠️ MOST IMPORTANT RULE
+
+👉 align-content works ONLY when:
+
+flex-wrap: wrap;
+
+AND
+👉 there are multiple rows (lines)
+
+❌ If items are in ONE line → align-content does NOTHING
+
+
+
+🔥 2. Your Container Code
+#container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: baseline;
+}
+
+
+
+🔥 3. First Fix Your Understanding
+❌ You wrote:
+
+“justify-content and align-content both space items”
+
+👉 ❌ Not exactly
+
+✅ Correct Difference:
+Property	Works on	Controls
+justify-content	flex items	main axis spacing
+align-items	flex items	cross axis alignment
+align-content	flex lines (rows)	cross axis spacing
+
+
+
+
+🔥 4. Understand AXIS in Your Code
+
+You used:
+
+flex-direction: column;
+So:
+Main axis   ↓ vertical (top → bottom)
+Cross axis  → horizontal (left → right)
+
+
+🔥 5. What is a FLEX LINE?
+
+👉 When wrapping happens:
+
+Line 1: [1][2]
+Line 2: [3][4]
+Line 3: [5][6]
+
+👉 Each row/column = flex line
+
+
+
+🔥 6. align-content VALUES (with examples)
+🟢 1. flex-start
+align-content: flex-start;
+
+👉 All lines packed at start of cross axis
+
+LEFT SIDE:
+[1][2]
+[3][4]
+[5][6]
+🔵 2. flex-end
+align-content: flex-end;
+
+👉 Lines move to end
+
+RIGHT SIDE:
+        [1][2]
+        [3][4]
+        [5][6]
+🟡 3. center
+align-content: center;
+
+👉 Lines in center
+
+    [1][2]
+    [3][4]
+    [5][6]
+🟣 4. space-between
+align-content: space-between;
+
+👉 Space between lines only
+
+[1][2]
+
+
+[3][4]
+
+
+[5][6]
+🟠 5. space-around
+align-content: space-around;
+
+👉 Equal space around lines (half at edges)
+
+🔴 6. space-evenly
+align-content: space-evenly;
+
+👉 Equal spacing everywhere
+
+⚪ 7. stretch (default)
+align-content: stretch;
+
+👉 Lines stretch to fill space
+
+⚫ 8. baseline (RARE)
+align-content: baseline;
+
+👉 Aligns lines based on text baseline
+
+⚠️ Rarely used, confusing, and often not visible
+
+
+
+
+
+🔥 7. BIG CONFUSION (Fix This)
+❌ You wrote:
+
+“align-content aligns items”
+
+👉 ❌ WRONG
+
+✅ Correct:
+
+👉 align-content aligns LINES, not items
+
+
+
+
+🔥 8. Difference: align-items vs align-content
+🟢 align-items
+
+👉 Works on each item
+
+align-items: center;
+🔵 align-content
+
+👉 Works on rows (lines)
+
+align-content: center;
+🧪 Example
+HTML
+<div class="container">
+  <div>1</div><div>2</div><div>3</div>
+  <div>4</div><div>5</div><div>6</div>
+</div>
+CSS
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  align-content: space-between;
+}
+Output:
+[1][2][3]
+
+
+[4][5][6]
+
+👉 Space between rows
+
+
+
+
+🔥 9. Your Code Behavior
+flex-direction: column;
+flex-wrap: wrap;
+align-content: baseline;
+Meaning:
+Items go top → bottom
+When overflow → new column forms
+Columns are aligned using baseline
+
+⚠️ But:
+
+👉 baseline here may show no visible effect
+
+
+
+
+🔥 10. Final Correct Concept
+🧠 Think like this:
+
+👉 Step 1:
+flex-direction → sets main axis
+
+👉 Step 2:
+flex-wrap → creates multiple lines
+
+👉 Step 3:
+align-content → controls spacing between those lines
+
+
+
+
+💡 MASTER MEMORY
+
+👉
+
+justify-content → items (main axis)
+align-items     → items (cross axis)
+align-content   → lines (cross axis)
+
+
+
+
+🚀 Pro Tip
+
+👉 If you don’t see effect of align-content:
+
+✔ Check:
+
+flex-wrap: wrap
+Multiple rows exist
+Container has extra space
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🧠 CORE IDEA FIRST
+
+👉
+
+align-items   → controls INDIVIDUAL ITEMS
+align-content → controls LINES (ROWS / COLUMNS)
+🔥 1. VISUAL DIAGRAM (ROW DIRECTION)
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 400px;
+}
+🟢 CASE 1: align-items
+align-items: center;
+🎯 Effect → EACH ITEM moves
++---------------------------+
+|                           |
+|   [1]  [2]  [3]           |
+|   [4]  [5]  [6]           |
+|                           |
++---------------------------+
+
+👉 Items inside each row move vertically (cross axis)
+👉 Rows stay in same position
+
+🔵 CASE 2: align-content
+align-content: center;
+🎯 Effect → WHOLE ROWS move
++---------------------------+
+|                           |
+|     [1][2][3]             |
+|     [4][5][6]             |
+|                           |
++---------------------------+
+
+👉 Entire rows shift together
+👉 Space is distributed between rows
+
+🔥 2. SIDE-BY-SIDE DIFFERENCE
+Feature	align-items	align-content
+Works on	Individual items	Rows (lines)
+Needs wrap?	❌ No	✅ Yes
+Axis	Cross axis	Cross axis
+Moves	Each box	Whole rows
+Visible when	Always	Only multiple lines
+🔥 3. WHEN align-content DOES NOTHING ❗
+flex-wrap: nowrap;
+
+👉 Only ONE row → no effect
+
+🔥 4. STRONG VISUAL COMPARISON
+🟢 align-items: flex-end
++-------------------+
+|                   |
+|                   |
+| [1] [2] [3]       |
+| [4] [5] [6]       |
++-------------------+
+
+👉 Items pushed to bottom inside their rows
+
+🔵 align-content: flex-end
++-------------------+
+|                   |
+|                   |
+|       [1][2][3]   |
+|       [4][5][6]   |
++-------------------+
+
+👉 Rows pushed to bottom
+
+🔥 5. REAL LIFE ANALOGY
+
+Think of a classroom:
+
+🎓 align-items
+
+👉 Students adjust their sitting position on benches
+
+🏫 align-content
+
+👉 Entire rows of benches move up/down
+
+🔥 6. MINI CODE DEMO
+HTML
+<div class="container">
+  <div>1</div><div>2</div><div>3</div>
+  <div>4</div><div>5</div><div>6</div>
+</div>
+CSS
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+}
+
+/* Try one at a time */
+/* align-items: center; */
+/* align-content: center; */
+/* 🔥 7. FINAL MEMORY TRICK */
+
+/* 👉
+
+align-items  = ITEM alignment
+align-content = CONTENT (rows) alignment */
+/* 💥 ONE-LINE MASTER RULE */
+
+/*
+👉
+
+  If rows are not moving → you need align-content
+If boxes inside row are moving → you are using align-items  
+*/
