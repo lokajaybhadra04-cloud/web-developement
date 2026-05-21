@@ -73,8 +73,83 @@
     </p>
         
 
+<hr/>
+  
 
-    <a href="/listing" class="back-link">Back to all listings</a>
+
+<!-- to add reviews in the listing -->
+
+
+<!-- Review Section -->
+<div class="review-section">
+
+    <h4 class="review-heading">
+        <i class="fa-solid fa-star review-icon"></i>
+        Leave a Review
+    </h4>
+
+
+
+    <form class="review-form"  action ="/listing/<%/" >
+
+        <!-- Rating -->
+        <div class="form-group mb-3 mt-3" >
+            <label>
+                <i class="fa-solid fa-ranking-star form-icon"></i>
+                Rating
+            </label>
+
+            <select class="review-input" id="rating" name="review[rating]">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+        </div>
+
+
+
+
+        <!-- Comment -->
+        <div class="form-group mb-3 mt-3">
+            <label>
+                <i class="fa-solid fa-comment form-icon"></i>
+                Comment
+            </label>
+        </br>
+            <textarea 
+                class="review-textarea"
+                placeholder="Write your review here..."
+                name="review[comment]"
+                id="comment"
+                rows="5"
+                cols="30"
+
+                ></textarea>
+        </div>
+
+        <!-- Button -->
+        <button class="review-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Submit Review
+        </button>
+
+    </form>
+
+
+
+
+</div>
+
+
+
+
+
+  <a href="/listing" class="back-link">Back to all listings</a>
+
+
+
 
 </div>
 

@@ -10,7 +10,7 @@ async function  main(){
 }
 
 
-
+// one to few (save few address of user inside the user itself)
 
 //create schema
 
@@ -34,7 +34,7 @@ const User=model("User",userSchema);
 
 
 
-//add user function
+//add new user function
 
 const addUsers=async()=>{
 let user1= new User({username:"lokajay",
@@ -51,12 +51,13 @@ console.log(user1);
 user1.addresses.push({  location:"shantinikton",
                 city:"shiliong"})
 
-console.log(user1);
+// console.log(user1);
 
 
 //add user to db
 let result=await user1.save();
-console.log(result);
+
+//console.log(result);
 }
 
 

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const Schema=mongoose.Schema;
 
-const listingSchema = new mongoose.Schema({
+const listingSchema = new Schema({
 
   title: {
     type: String,
@@ -41,11 +42,32 @@ const listingSchema = new mongoose.Schema({
     type: String,
     enum: ["Beach", "Mountain", "City", "Forest"],
     default: "City"
+  },
+
+
+reviews:[
+  {
+    type: Schema.Types.ObjectId,
+    ref:"Review",
   }
+],
 
 
-}, { timestamps: true }// what it does is it adds createdAt and updatedAt fields to the schema);
+
+
+
+},
+
+
+
+
+
+{ timestamps: true }// what it does is it adds createdAt and updatedAt fields to the schema);
 );
+
+
+
+
 const Listing = mongoose.model("Listing", listingSchema);
 
 module.exports = Listing;
