@@ -8,6 +8,7 @@ const app = express();
 
 //implemting session in project
 const session=require("express-session");
+const flash=require("connect-flash");
 
 
 
@@ -60,16 +61,27 @@ const sesssionOptions={
   secret:"thisshouldbeabettersecret",
   resave:false,
   saveUninitialized:true, 
+
+  cookie:{
+    expires:Date.now() + 1000*60*60*24*7, // 7 days
+   maxAge:1000*60*60*24*7 ,// after 7 days
+  httpOnly:true, // only send cookie over https
+   
+  },
 };
 
 
 app.use(session(sesssionOptions));
+app.use(flash());
 
 
 
 
-
-
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
 
 
 

@@ -112,7 +112,7 @@ module.exports.new_route_post = wrapAsync(async (req, res) => {
 
     const newListing = new Listing(req.body);
     await newListing.save();
-
+    req.flash("success", "Listing created successfully!");
     res.redirect("/listing");
 
   });
@@ -159,7 +159,8 @@ module.exports.writing_Reviews = wrapAsync(async (req, res, next) => {
   await newReview.save();
   await listing.save();
 
-res.status(201).redirect(`/listing/${id}`);
+  req.flash("success", "Review added successfully!");
+  res.status(201).redirect(`/listing/${id}`);
 });
 
 
@@ -180,5 +181,7 @@ module.exports.delete_review = wrapAsync(async (req, res, next) => {
   listing.reviews.pull(reviewId);
   await listing.save();
   await review.deleteOne();
+  req.flash("success", "Review deleted successfully!");     
+  
   res.redirect(`/listing/${id}`);
 });
