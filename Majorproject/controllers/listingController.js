@@ -3,6 +3,8 @@ const Listing = require("../models/listing");
 const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError");
 const listingSchema = require('../schema');
+const reviewSchema = require('../schema1');
+const Reviews=require('../models/reviews');
 
 
 
@@ -81,7 +83,7 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
 
   );
 
-
+ 
 // DELETE
 module.exports.delete_route_post =wrapAsync(async (req, res) => {
   const { id } = req.params;
@@ -121,11 +123,62 @@ module.exports.new_route_post = wrapAsync(async (req, res) => {
 module.exports.show_indivdual_listing = wrapAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const listing = await Listing.findById(id);
+  const listing = await Listing.findById(id).populate("reviews");
 
   if (!listing) {
     return next(new ExpressError("Listing Not Found", 404));
   }
 
   res.render("listings/show", { listing });
+});
+
+
+
+
+//wrtiting reveiws:
+module.exports.writing_Reviews = wrapAsync(async (req, res, next) => {
+
+  const { id } = req.params;
+
+  const listing = await Listing.findById(id);
+
+  if (!listing) {
+    return next(new ExpressError("Listing Not Found", 404));
+  }
+
+  if (!req.body || !req.body.review) {
+    return next(
+      new ExpressError("Review data missing", 400)
+    );
+  }
+
+  const newReview = new Reviews(req.body.review);
+
+  listing.reviews.push(newReview);
+
+  await newReview.save();
+  await listing.save();
+
+res.status(201).redirect(`/listing/${id}`);
+});
+
+
+
+
+// deleting reviews ans also removing the reference from the listing  
+
+module.exports.delete_review = wrapAsync(async (req, res, next) => {
+
+  const { id, reviewId } = req.params;
+  const listing = await Listing.findById(id);
+  const review = await Reviews.findById(reviewId);
+
+  if (!listing || !review) {
+    return next(new ExpressError("Listing or Review Not Found", 404));
+  }
+
+  listing.reviews.pull(reviewId);
+  await listing.save();
+  await review.deleteOne();
+  res.redirect(`/listing/${id}`);
 });

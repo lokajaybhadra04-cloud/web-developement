@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema=mongoose.Schema;
+const Review = require("./reviews");
 
 const listingSchema = new Schema({
 
@@ -65,6 +66,17 @@ reviews:[
 { timestamps: true }// what it does is it adds createdAt and updatedAt fields to the schema);
 );
 
+
+
+
+
+
+//middleware that delete the reviews when a listing is deleted
+listingSchema.post("findOneAndDelete", async (listing) => {
+  if (listing) {
+    await Review.deleteMany({ _id: { $in: listing.reviews }});
+  }
+});
 
 
 

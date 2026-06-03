@@ -497,3 +497,14 @@ width:100%;
 height:220px;
 object-fit:cover;
 }
+
+
+.review-item{
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+  
+    
+    
+}

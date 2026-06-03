@@ -6,6 +6,11 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+//implemting session in project
+const session=require("express-session");
+
+
+
 
 const Listing = require("./models/listing.js");
 
@@ -35,8 +40,6 @@ app.engine("ejs", ejsMate);
 
 
 
-
-
 //  request==> Middleware===>response
 
 
@@ -49,7 +52,18 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 
+app.use(express.json());
 
+
+
+const sesssionOptions={
+  secret:"thisshouldbeabettersecret",
+  resave:false,
+  saveUninitialized:true, 
+};
+
+
+app.use(session(sesssionOptions));
 
 
 

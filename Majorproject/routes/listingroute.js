@@ -3,7 +3,7 @@ const router = express.Router();
 
 const listingController = require("../controllers/listingController");
 const { validateListing } = require("../middleware");
-
+const { validateReview } = require("../middleware1");
 // INDEX
 router.get("/", listingController.index);
 
@@ -20,5 +20,13 @@ router.post("/:id/edit", validateListing, listingController.Update_route_post);
 
 // DELETE
 router.post("/:id/delete", listingController.delete_route_post);
+
+
+//post reviews
+router.post("/:id/reviews", validateReview, listingController.writing_Reviews);
+
+//delte reviews
+router.post("/:id/reviews/:reviewId/delete", listingController.delete_review);
+
 
 module.exports = router;

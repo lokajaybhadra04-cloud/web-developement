@@ -90,7 +90,7 @@
 
 
 
-    <form class="review-form"  action ="/listing/<%/" >
+    <form class="review-form  needs-validation "  action ="/listing/<%=listing.id %>/reviews" method="POST"  novalidate  >
 
         <!-- Rating -->
         <div class="form-group mb-3 mt-3" >
@@ -125,8 +125,12 @@
                 id="comment"
                 rows="5"
                 cols="30"
+                required 
 
                 ></textarea>
+                <div class="invalid-feedback">
+    Please enter a review comment.
+</div>
         </div>
 
         <!-- Button -->
@@ -138,12 +142,32 @@
     </form>
 
 
+    <hr />
 
+    <div class="review-section mt-4">
+    <h4>All Reviews</h4>
 
+    <div class="row">
+        <% listing.reviews.forEach(function(review) { %>
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="review-item">
+                    <!-- add star icons  yellow color  -->
+                 <p class="review-rating">
+                   <% for(let i = 0; i < review.rating; i++) { %>
+                   <i class="fa-solid fa-star text-warning"></i>
+                    <% } %>
+                </p>
+                    <p><strong>Comment:</strong> <%= review.comment %></p>
+                    <!-- delete the review -->
+                 <form action="/listing/<%= listing._id %>/reviews/<%= review._id %>/delete" method="POST">
+                    <button class="btn btn-danger">Delete Review</button>
+                  </form>
+                   
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </div>
-
-
-
 
 
   <a href="/listing" class="back-link">Back to all listings</a>
