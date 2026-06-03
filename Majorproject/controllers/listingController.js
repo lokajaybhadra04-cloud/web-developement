@@ -85,15 +85,15 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
 
  
 // DELETE
-module.exports.delete_route_post =wrapAsync(async (req, res) => {
+module.exports.delete_route_post = wrapAsync(async (req, res) => {
   const { id } = req.params;
 
+  await Listing.findByIdAndDelete(id);
 
-    await Listing.findByIdAndDelete(id);
-    res.redirect("/listing");
+  req.flash("success", "Listing deleted successfully!");
 
+  res.redirect("/listing");
 });
-
 
 // NEW PAGE
 module.exports.new_route = (req, res) => {
@@ -182,6 +182,6 @@ module.exports.delete_review = wrapAsync(async (req, res, next) => {
   await listing.save();
   await review.deleteOne();
   req.flash("success", "Review deleted successfully!");     
-  
+
   res.redirect(`/listing/${id}`);
 });

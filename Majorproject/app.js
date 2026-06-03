@@ -76,7 +76,11 @@ app.use(flash());
 
 
 
-
+//middleware use for flash messages and
+//  we are setting the flash messages 
+// to res.locals so that we can access 
+// it in our views and we are using next()
+//  to pass the control
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
