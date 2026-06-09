@@ -4,29 +4,32 @@ const router = express.Router();
 const listingController = require("../controllers/listingController");
 const { validateListing } = require("../middleware");
 const { validateReview } = require("../middleware1");
+const {isloggedin}=require("../middleware2.js");
+
+
 // INDEX
 router.get("/", listingController.index);
 
 // NEW
-router.get("/new", listingController.new_route);
-router.post("/new", validateListing, listingController.new_route_post);
+router.get("/new", isloggedin, listingController.new_route);
+router.post("/new", isloggedin, validateListing, listingController.new_route_post);
 
 // SHOW
-router.get("/:id", listingController.show_indivdual_listing);
+router.get("/:id", isloggedin, listingController.show_indivdual_listing);
 
 // EDIT
-router.get("/:id/edit", listingController.Updateroute);
-router.post("/:id/edit", validateListing, listingController.Update_route_post);
+router.get("/:id/edit", isloggedin, listingController.Updateroute);
+router.post("/:id/edit", isloggedin, validateListing, listingController.Update_route_post);
 
 // DELETE
-router.post("/:id/delete", listingController.delete_route_post);
+router.post("/:id/delete", isloggedin, listingController.delete_route_post);
 
 
 //post reviews
-router.post("/:id/reviews", validateReview, listingController.writing_Reviews);
+router.post("/:id/reviews", isloggedin, validateReview, listingController.writing_Reviews);
 
 //delte reviews
-router.post("/:id/reviews/:reviewId/delete", listingController.delete_review);
+router.post("/:id/reviews/:reviewId/delete", isloggedin, listingController.delete_review);
 
 
 module.exports = router;

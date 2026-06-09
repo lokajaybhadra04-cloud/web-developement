@@ -10,6 +10,8 @@ const Reviews=require('../models/reviews');
 
 
 
+
+
 // INDEX ROUTE
 module.exports.index = async (req, res) => {
   try {
@@ -51,9 +53,13 @@ module.exports.Updateroute = wrapAsync(async (req, res) =>
 
   
     const listing = await Listing.findById(id);
-    if (!listing) return res.status(404).send("Listing not found");
-
-    res.render("listings/edit", { listing });
+    if (!listing) 
+    {
+      req.flash("error", "Listing Not Found");
+      return res.redirect("/listing");
+    }
+    
+      res.render("listings/edit", { listing });
 
   
 });
@@ -77,7 +83,7 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
 
     
     if (!listing) return res.status(404).send("Listing not found");
-
+    req.flash("success", "Listing updated successfully!");
     res.redirect("/listing/" + id);
   }
 
@@ -97,7 +103,9 @@ module.exports.delete_route_post = wrapAsync(async (req, res) => {
 
 // NEW PAGE
 module.exports.new_route = (req, res) => {
-  res.render("listings/new");
+
+    return res.render("listings/new");
+
 };
 
 
@@ -126,7 +134,8 @@ module.exports.show_indivdual_listing = wrapAsync(async (req, res, next) => {
   const listing = await Listing.findById(id).populate("reviews");
 
   if (!listing) {
-    return next(new ExpressError("Listing Not Found", 404));
+    req.flash("error", "Listing Not Found");
+    return res.redirect("/listing");
   }
 
   res.render("listings/show", { listing });
@@ -143,7 +152,8 @@ module.exports.writing_Reviews = wrapAsync(async (req, res, next) => {
   const listing = await Listing.findById(id);
 
   if (!listing) {
-    return next(new ExpressError("Listing Not Found", 404));
+    req.flash("error", "Listing Not Found");
+    return res.redirect("/listing");
   }
 
   if (!req.body || !req.body.review) {

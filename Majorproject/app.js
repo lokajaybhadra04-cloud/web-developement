@@ -8,7 +8,14 @@ const app = express();
 
 //implemting session in project
 const session=require("express-session");
+//implemting flash messages in project
 const flash=require("connect-flash");
+
+//implemting passport protection in project
+const passport=require("passport");
+const LocalStrategy=require("passport-local");
+const User=require("./models/user.js");
+
 
 
 
@@ -76,6 +83,49 @@ app.use(flash());
 
 
 
+
+
+//why passport.initialize() is used because
+//  we need to initialize passport and
+//  we need to use it in our app and 
+// passport.session() is used because 
+// we need to use sessions in our app 
+// and we need to use it after session
+//  middleware
+app.use(passport.initialize());
+app.use(passport.session());
+//why passport.use is used because
+//  we need to specify the strategy 
+// for authentication and we are using 
+// local strategy and we are passing 
+// the User model to it and it will use 
+// the username and password fields from 
+// the User model for authentication
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser()); 
+
+
+
+
+
+// //creating fake user to test:
+
+// app.get("/demouser",async(req,res)=>{
+//   let fakeUser=new User({username:"demouser",
+//     email:"demouser@example.com"});
+
+//   let registeredUser=await User.register(fakeUser,"demopassword");
+
+//   res.send(registeredUser);
+// })
+
+
+
+
+
+
+
 //middleware use for flash messages and
 //  we are setting the flash messages 
 // to res.locals so that we can access 
@@ -84,13 +134,15 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
+  res.locals.currentUser = req.user; 
+  // to access the current user in our views 
   next();
 });
 
 
 
-
-
+const userRoute=require("./routes/listinguserroute.js"); 
+app.use("/", userRoute);  
 
 const listingRoute = require("./routes/listingroute.js");
 app.use("/listing", listingRoute);
