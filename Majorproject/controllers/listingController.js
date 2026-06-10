@@ -131,12 +131,13 @@ module.exports.new_route_post = wrapAsync(async (req, res) => {
 module.exports.show_indivdual_listing = wrapAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const listing = await Listing.findById(id).populate("reviews");
+  const listing = await Listing.findById(id).populate("reviews").populate("owner");
 
   if (!listing) {
     req.flash("error", "Listing Not Found");
     return res.redirect("/listing");
   }
+  console.log(listing);
 
   res.render("listings/show", { listing });
 });
