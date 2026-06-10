@@ -53,9 +53,12 @@ reviews:[
   }
 ],
 
-
-
-
+// add owner field to the listing schema to
+//  associate each listing with a user
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 
 },
 
