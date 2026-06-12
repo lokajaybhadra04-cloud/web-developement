@@ -4,7 +4,7 @@ const router = express.Router();
 const listingController = require("../controllers/listingController");
 const { validateListing } = require("../middleware");
 const { validateReview } = require("../middleware1");
-const {isloggedin}=require("../middleware2.js");
+const {isloggedin ,isAuthor}=require("../middleware2.js");
 
 
 // INDEX
@@ -18,18 +18,18 @@ router.post("/new", isloggedin, validateListing, listingController.new_route_pos
 router.get("/:id", isloggedin, listingController.show_indivdual_listing);
 
 // EDIT
-router.get("/:id/edit", isloggedin, listingController.Updateroute);
-router.post("/:id/edit", isloggedin, validateListing, listingController.Update_route_post);
+router.get("/:id/edit", isloggedin, isAuthor, listingController.Updateroute);
+router.post("/:id/edit", isloggedin, isAuthor, validateListing, listingController.Update_route_post);
 
 // DELETE
-router.post("/:id/delete", isloggedin, listingController.delete_route_post);
+router.post("/:id/delete", isloggedin, isAuthor, listingController.delete_route_post);
 
 
 //post reviews
 router.post("/:id/reviews", isloggedin, validateReview, listingController.writing_Reviews);
 
 //delte reviews
-router.post("/:id/reviews/:reviewId/delete", isloggedin, listingController.delete_review);
+router.post("/:id/reviews/:reviewId/delete", isloggedin, isAuthor, listingController.delete_review);
 
 
 module.exports = router;

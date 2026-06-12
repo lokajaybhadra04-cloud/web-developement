@@ -73,14 +73,14 @@ module.exports.Update_route_post = wrapAsync(async (req, res,next) =>
   //  if(!req.body.title || !req.body.price || !req.body.location || !req.body.country){
   //    throw new ExpressError("Send valid for the listing", 400);
   // }   
+     let { id } = req.params;
+ 
 
-    
-    const { id } = req.params;
-
-
-    const listing = await Listing.findByIdAndUpdate(id, req.body,{ returnDocument: "after" } );
-
-
+    await Listing.findByIdAndUpdate(
+      id,
+      req.body,
+      { runValidators: true, returnDocument: "after" }
+    );  
     
     if (!listing) return res.status(404).send("Listing not found");
     req.flash("success", "Listing updated successfully!");
@@ -119,6 +119,10 @@ module.exports.new_route_post = wrapAsync(async (req, res) => {
      
 
     const newListing = new Listing(req.body);
+    newListing.owner = req.user._id; 
+   // console.log(req.user);
+    // Assuming you have user authentication 
+    // and req.user contains the logged-in user's information
     await newListing.save();
     req.flash("success", "Listing created successfully!");
     res.redirect("/listing");
@@ -137,7 +141,7 @@ module.exports.show_indivdual_listing = wrapAsync(async (req, res, next) => {
     req.flash("error", "Listing Not Found");
     return res.redirect("/listing");
   }
-  console.log(listing);
+ // console.log(listing);
 
   res.render("listings/show", { listing });
 });

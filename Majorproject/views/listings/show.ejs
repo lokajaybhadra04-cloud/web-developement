@@ -11,12 +11,22 @@
         alt="<%= listing.title %>" 
         class="listing-image"
     >
+
+    <br/>
+    <p class="detail-label">Hosted by:
+        <i> <%= listing.owner.username %> </i></p>
+
+
+        <br />
 <div class="listing-details">
 
     <p class="listing-description">
         <i class="fa-solid fa-align-left detail-icon"></i>
-        <span class="detail-label">Description:</span>
-        <%= listing.description %>
+        
+
+
+      <p>  <span class="detail-label">Description:</span>
+        <%= listing.description %></p>
     </p>
 
     <p class="listing-price">
@@ -47,7 +57,7 @@
 </div>
 
 
-    <div class="listing-buttons">
+<div class="listing-buttons">
 
         <!-- Update -->
         <form action="/listing/<%= listing._id %>/edit" method="GET">

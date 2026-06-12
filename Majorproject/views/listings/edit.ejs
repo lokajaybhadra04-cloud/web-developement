@@ -44,8 +44,9 @@
             id="image" 
             name="image" 
             value="<%= listing.image %>"
-            required
-        >
+            placeholder="https://example.com/image.jpg"
+            required 
+            >
 
 
     </div>
@@ -97,6 +98,24 @@
                     Please give valid country name
                 </div>
     </div>
+
+    <!-- catergory -->
+
+    <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select name="category" id="category" class="form-control" required>
+            <option value="">Select Category</option>
+            <option value="Beach" <%= listing.category === 'Beach' ? 'selected' : '' %>>🏖 Beach</option>
+            <option value="Mountain" <%= listing.category === 'Mountain' ? 'selected' : '' %>>⛰ Mountain</option>
+            <option value="City" <%= listing.category === 'City' ? 'selected' : '' %>>🏙 City</option>
+            <option value="Forest" <%= listing.category === 'Forest' ? 'selected' : '' %>>🌲 Forest</option>
+        </select>
+        <div class="invalid-feedback">
+            Please select a category.
+        </div>
+
+
+
 
     <button type="submit" class="btn btn-primary">Update Listing</button>
 

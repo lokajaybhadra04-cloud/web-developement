@@ -1,3 +1,10 @@
+const Listing = require("./models/listing");
+const wrapAsync=require("./utils/wrapAsync");
+
+
+
+
+
 module.exports.isloggedin=(req,res,next)=>{
     // console.log("isloggedin middleware called");    
     // console.log("req.isAuthenticated():", req.isAuthenticated());
@@ -38,3 +45,30 @@ module.exports.saveRedirectUrl=(req,res,next)=>{
     }
     next();
 }
+
+
+
+
+
+module.exports.isAuthor=wrapAsync(async (req,res,next)=>{
+   
+    const { id } = req.params;
+
+//find and update in twoparts because:
+//1. We want to run the validators defined
+//  in the schema, which only run on save()
+//  or create(), not on findByIdAndUpdate().
+//2. We want to check if the listing exists 
+// before trying to update it, so we can handle
+//  the case where the listing is not found
+//  and provide appropriate feedback to the user.
+    const listing = await Listing.findById(id);
+    if(! listing.owner.equals(res.locals.currentUser._id )){
+      req.flash("error", "You are not the owner of this listing");
+      return res.redirect("/listing/" + id);
+    }
+    next();
+}
+
+
+);
